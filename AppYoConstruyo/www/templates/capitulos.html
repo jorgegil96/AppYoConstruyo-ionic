@@ -1,0 +1,22 @@
+<ion-view view-title="Menú">
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="capitulo in capitulos" class="list card">
+                <div class="item-image">
+                    <a href="#/app/capitulos/{{capitulo.id}}">
+                        <img src="../img/{{capitulo.image}}"/>
+                    </a>
+                </div>
+                <div class="item item-body card-box">
+                    <h2>
+                        {{capitulo.title}}
+                    </h2>
+                    <p>
+                        Alcances del curso<br>
+                        Conceptos básicos de sostenibilidad
+                    </p>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

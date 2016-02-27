@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-stable {
+	background-color: #387ef5;
+}
+
+.bar.bar-stable .title {
+	color: #fff;
+}
+
+.bar-stable .button.button-clear {
+	color: #fff;
+}
+
+.card-box {
+	padding: 5px;
+}
+
+.card-box h2 {
+	margin: 5px;
+}
