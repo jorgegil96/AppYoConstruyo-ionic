@@ -44,11 +44,12 @@ angular.module('starter.controllers', [])
 .controller('PlaylistsCtrl', function($scope) {
   $scope.capitulos = [
     { title: 'Introducción', id: 1, image: 'header.png'},
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+    { title: 'Cimentación', id: 2, image: 'cimentacion.png' },
+    { title: 'Muros', id: 3, image: 'muros.png' },
+    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png' },
+    { title: 'Losas', id: 5, image: 'losas.png' },
+    { title: 'Azotea', id: 6, image: 'azotea.png' },
+    { title: 'Acabados', id: 7, image: 'acabados.png'}
   ];
 })
 
