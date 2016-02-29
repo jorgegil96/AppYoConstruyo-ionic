@@ -1,0 +1,11 @@
+<ion-view view-title="Diseño">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="tema in temas">
+				<div ng-if="tema.capId == 1">
+				{{tema.title}}
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

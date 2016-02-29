@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -48,8 +48,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/browse.html'
         }
       }
-    })
-    .state('app.capitulos', {
+  })
+    
+  .state('app.capitulos', {
       url: '/capitulos',
       views: {
         'menuContent': {
@@ -57,7 +58,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'PlaylistsCtrl'
         }
       }
-    })
+  })
+
+  .state('app.tema', {
+    url: '/capitulos/:capituloId/:temaId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/capitulo.html',
+        controller: 'TemasCtrl'
+      }
+    }
+  })
 
   .state('app.single', {
     url: '/capitulos/:capituloId',
@@ -68,6 +79,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/capitulos');
 });

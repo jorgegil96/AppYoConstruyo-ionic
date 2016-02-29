@@ -54,4 +54,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('TemasCtrl', function($scope) {
+  $scope.temas = [
+    { title: 'Diseño', capId: 1, id: 1},
+    { title: 'Sostenibilidad', capId: 1, id: 2},
+    { title: 'Terreno', capId: 1, id: 3},
+    { title: 'Clima', capId: 1, id: 4},
+    { title: 'Materiales', capId: 2, id: 5}
+  ];
 });
