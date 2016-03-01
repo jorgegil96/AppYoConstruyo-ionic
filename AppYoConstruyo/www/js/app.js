@@ -55,29 +55,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/capitulos.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'CapitulosCtrl'
         }
       }
   })
 
-  .state('app.tema', {
-    url: '/capitulos/:capituloId/:temaId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/capitulo.html',
-        controller: 'TemasCtrl'
+  .state('app.introduccion', {
+      url: '/capitulos/introduccion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/introduccion.html',
+        }
       }
-    }
   })
 
-  .state('app.single', {
-    url: '/capitulos/:capituloId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/capitulo.html',
-        controller: 'PlaylistCtrl'
+  .state('app.diseno', {
+      url: '/capitulos/introduccion/diseno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/diseno.html',
+        }
       }
-    }
+  })
+
+  .state('app.cimentacion', {
+      url: '/capitulos/cimentacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/cimentacion.html',
+        }
+      }
   });
 
   // if none of the above states are matched, use this as the fallback

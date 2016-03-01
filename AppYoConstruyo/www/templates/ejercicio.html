@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjercicio()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form ng-submit="doCheck()">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Selecciona la distribución correcta:
+                    <hr>
+                    <img class="full-image" src="img/introduccion/bien.png"/>
+                    <img class="full-image" src="img/introduccion/mal.png"/>
+                    
+                    <div class="button-bar" type="submit">
+                      <button class="button button-energized" type="submit">A</button>
+                      <button class="button button-energized" type="submit">B</button>                  
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

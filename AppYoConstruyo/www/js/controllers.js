@@ -39,21 +39,61 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+
+  $ionicModal.fromTemplateUrl('templates/ejercicio.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalB = modal;
+  });
+
+  $scope.closeEjercicio = function() {
+    $scope.modalB.hide();
+  };
+
+  // Open the login modal
+  $scope.ejercicio = function() {
+    $scope.modalB.show();
+  };
+
+  $scope.doCheck = function() {
+    console.log('Doing login', $scope.loginData);
+
+    $scope.closeEjercicio();
+    $scope.resultado();
+    /*
+    $timeout(function() {
+      $scope.closeEjercicio();
+      $scope.resultado();
+    }, 1000);*/
+  };
+
+  $ionicModal.fromTemplateUrl('templates/resultado.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalC = modal;
+  });
+
+  $scope.closeResultado = function() {
+    $scope.modalC.hide();
+  };
+
+  // Open the login modal
+  $scope.resultado = function() {
+    $scope.modalC.show();
+  };
+
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('CapitulosCtrl', function($scope) {
   $scope.capitulos = [
     { title: 'Introducción', id: 1, image: 'header.png', link: 'introduccion'},
     { title: 'Cimentación', id: 2, image: 'cimentacion.png', link: 'cimentacion' },
-    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros' },
-    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos' },
-    { title: 'Losas', id: 5, image: 'losas.png' },
-    { title: 'Azotea', id: 6, image: 'azotea.png' },
-    { title: 'Acabados', id: 7, image: 'acabados.png'}
+    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros.html' },
+    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos.html' },
+    { title: 'Losas', id: 5, image: 'losas.png', link: 'losas.html' },
+    { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea.html' },
+    { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados.html'}
   ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
 .controller('TemasCtrl', function($scope) {
