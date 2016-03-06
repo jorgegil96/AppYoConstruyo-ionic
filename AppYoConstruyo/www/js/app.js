@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 
-  // SUBTEMAS CAPITULO INTRODUCCION
+  // SUBTEMAS INTRODUCCION
   .state('app.presentacion', {
       url: '/capitulos/introduccion/presentacion',
       views: {
@@ -120,14 +120,46 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
   .state('app.procesos', {
-      url: '/capitulos/introduccion/diseno',
+      url: '/capitulos/introduccion/procesos',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/introduccion/diseno.html',
+          templateUrl: 'templates/modulos/temas/introduccion/procesos.html',
         }
       }
   })
-
+  .state('app.concreto', {
+      url: '/capitulos/introduccion/concreto',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/concreto.html',
+        }
+      }
+  })
+  .state('app.agregados', {
+      url: '/capitulos/introduccion/agregados',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/agregados.html',
+        }
+      }
+  })
+  .state('app.mezcla', {
+      url: '/capitulos/introduccion/mezcla',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/mezcla.html',
+        }
+      }
+  })
+  .state('app.armados', {
+      url: '/capitulos/introduccion/armados',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/armados.html',
+        }
+      }
+  })
+  // TERMINAN SUBTEMAS INTRODUCCION
 
 
 

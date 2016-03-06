@@ -55,11 +55,18 @@ angular.module('starter.controllers', [])
     $scope.modalB.show();
   };
 
-  $scope.doCheck = function() {
-    console.log('Doing login', $scope.loginData);
-
+  $scope.doCheck = function($result) {
+    console.log($result);
     $scope.closeEjercicio();
-    $scope.resultado();
+
+    if ($result) {
+      console.log("bieeeeen");
+      $scope.resultado(true);
+    } else {
+      console.log("maaaaal");
+      $scope.resultado(false);
+    }
+    
     /*
     $timeout(function() {
       $scope.closeEjercicio();
@@ -67,19 +74,28 @@ angular.module('starter.controllers', [])
     }, 1000);*/
   };
 
-  $ionicModal.fromTemplateUrl('templates/resultado.html', {
+  $ionicModal.fromTemplateUrl('templates/resultadoBien.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modalC = modal;
+    $scope.modalResBien = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/resultadoMal.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalResMal = modal;
   });
 
   $scope.closeResultado = function() {
-    $scope.modalC.hide();
+    $scope.modalResMal.hide();
+    $scope.modalResBien.hide();
   };
 
   // Open the login modal
-  $scope.resultado = function() {
-    $scope.modalC.show();
+  $scope.resultado = function($resultado) {
+    if ($resultado)
+      $scope.modalResBien.show();
+    else
+      $scope.modalResMal.show();
   };
 
 })

@@ -10,17 +10,17 @@
         </div>
     </ion-header-bar>
     <ion-content class="gray-background">
-        <form ng-submit="doCheck()">
+        <form name="ejercicio-diseno" >
             <div class="card">
                 <div class="item item-text-wrap">
-                    Selecciona la distribución correcta:
+                    ¿Cuál de las siguientes imágenes corresponde a una distribución correcta de la casa? 
                     <hr>
-                    <img class="full-image" src="img/introduccion/bien.png"/>
-                    <img class="full-image" src="img/introduccion/mal.png"/>
+                    <img class="full-image padded" src="img/introduccion/bien.png"/>
+                    <img class="full-image padded" src="img/introduccion/mal.png"/>
                     
-                    <div class="button-bar" type="submit">
-                      <button class="button button-energized" type="submit">A</button>
-                      <button class="button button-energized" type="submit">B</button>                  
+                    <div class="button-bar">
+                      <button ng-click="doCheck(true)" class="button button-energized" type="button">A</button>
+                      <button ng-click="doCheck(false)" class="button button-energized" type="button">B</button>                  
                     </div>
                 </div>
 
