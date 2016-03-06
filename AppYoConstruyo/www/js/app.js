@@ -71,19 +71,59 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
   // SUBTEMAS CAPITULO INTRODUCCION
-  .state('app.diseno', {
-      url: '/capitulos/introduccion/diseno',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/modulos/temas/diseno.html',
-        }
-      }
-  })
   .state('app.presentacion', {
       url: '/capitulos/introduccion/presentacion',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/presentacion.html',
+          templateUrl: 'templates/modulos/temas/introduccion/presentacion.html',
+        }
+      }
+  })
+  .state('app.sostenibilidad', {
+      url: '/capitulos/introduccion/sostenibilidad',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/sostenibilidad.html',
+        }
+      }
+  })
+  .state('app.diseno', {
+      url: '/capitulos/introduccion/diseno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/diseno.html',
+        }
+      }
+  })
+  .state('app.terreno', {
+      url: '/capitulos/introduccion/terreno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/tereno.html',
+        }
+      }
+  })
+  .state('app.vivienda', {
+      url: '/capitulos/introduccion/vivienda',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/vivienda.html',
+        }
+      }
+  })
+  .state('app.clima', {
+      url: '/capitulos/introduccion/clima',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/clima.html',
+        }
+      }
+  })
+  .state('app.procesos', {
+      url: '/capitulos/introduccion/diseno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/diseno.html',
         }
       }
   })
