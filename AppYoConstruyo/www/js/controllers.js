@@ -98,10 +98,16 @@ angular.module('starter.controllers', [])
 
 .controller('TemasCtrl', function($scope) {
   $scope.temas = [
-    { title: 'Diseño', capId: 1, id: 1},
+    { title: 'Presentación', capId: 1, id: 1},
     { title: 'Sostenibilidad', capId: 1, id: 2},
-    { title: 'Terreno', capId: 1, id: 3},
+    { title: 'Diseño', capId: 1, id: 1},
+    { title: 'Vivienda', capId: 1, id: 4},
     { title: 'Clima', capId: 1, id: 4},
+    { title: 'Procesos de construcción sostenible', capId: 1, id: 4},
+    { title: 'Uso del Concreto', capId: 1, id: 4},
+    { title: 'Agregados', capId: 1, id: 4},
+    { title: 'Mezclas del Cemento', capId: 1, id: 4},
+    { title: 'Terreno', capId: 1, id: 3},
     { title: 'Materiales', capId: 2, id: 5}
   ];
 });

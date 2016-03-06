@@ -69,6 +69,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
+
+  // SUBTEMAS CAPITULO INTRODUCCION
   .state('app.diseno', {
       url: '/capitulos/introduccion/diseno',
       views: {
@@ -77,6 +79,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
+  .state('app.presentacion', {
+      url: '/capitulos/introduccion/presentacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/presentacion.html',
+        }
+      }
+  })
+
+
+
 
   .state('app.cimentacion', {
       url: '/capitulos/cimentacion',
