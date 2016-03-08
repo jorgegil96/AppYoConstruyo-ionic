@@ -74,12 +74,12 @@ angular.module('starter.controllers', [])
     }, 1000);*/
   };
 
-  $ionicModal.fromTemplateUrl('templates/resultadoBien.html', {
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/resultadoBien.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalResBien = modal;
   });
-  $ionicModal.fromTemplateUrl('templates/resultadoMal.html', {
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/resultadoMal.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalResMal = modal;
