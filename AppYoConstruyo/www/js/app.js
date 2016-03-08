@@ -99,7 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/capitulos/introduccion/terreno',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/introduccion/tereno.html',
+          templateUrl: 'templates/modulos/temas/introduccion/terreno.html',
         }
       }
   })

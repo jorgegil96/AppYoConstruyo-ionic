@@ -98,6 +98,26 @@ angular.module('starter.controllers', [])
       $scope.modalResMal.show();
   };
 
+
+  // EJERCICIO TERRENO
+  $ionicModal.fromTemplateUrl('templates/ejTerreno.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalTerreno = modal;
+  });
+  $scope.ejTerreno = function() {
+    $scope.modalTerreno.show();
+  };
+  $scope.closeEjTerreno = function() {
+    $scope.modalTerreno.hide();
+  };
+  $scope.checkEjTerreno = function($respuesta) {
+    $scope.closeEjTerreno();
+    //TODO: seleccionar html de respuesta
+  };
+
+
+
 })
 
 .controller('CapitulosCtrl', function($scope) {
@@ -109,21 +129,5 @@ angular.module('starter.controllers', [])
     { title: 'Losas', id: 5, image: 'losas.png', link: 'losas.html' },
     { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea.html' },
     { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados.html'}
-  ];
-})
-
-.controller('TemasCtrl', function($scope) {
-  $scope.temas = [
-    { title: 'Presentación', capId: 1, id: 1},
-    { title: 'Sostenibilidad', capId: 1, id: 2},
-    { title: 'Diseño', capId: 1, id: 1},
-    { title: 'Vivienda', capId: 1, id: 4},
-    { title: 'Clima', capId: 1, id: 4},
-    { title: 'Procesos de construcción sostenible', capId: 1, id: 4},
-    { title: 'Uso del Concreto', capId: 1, id: 4},
-    { title: 'Agregados', capId: 1, id: 4},
-    { title: 'Mezclas del Cemento', capId: 1, id: 4},
-    { title: 'Terreno', capId: 1, id: 3},
-    { title: 'Materiales', capId: 2, id: 5}
   ];
 });
