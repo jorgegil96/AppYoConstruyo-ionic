@@ -30,3 +30,11 @@
 .padded {
 	padding: 30px;
 }
+
+.padded-text {
+	padding: 10px;
+}
+
+.padded-button {
+	margin-left: 10px;
+}

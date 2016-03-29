@@ -60,6 +60,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
+
+  // INTRODUCCION
   .state('app.introduccion', {
       url: '/capitulos/introduccion',
       views: {
@@ -69,8 +71,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
-
-  // SUBTEMAS INTRODUCCION
   .state('app.presentacion', {
       url: '/capitulos/introduccion/presentacion',
       views: {
@@ -159,10 +159,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-  // TERMINAN SUBTEMAS INTRODUCCION
+  .state('app.previoarmado', {
+      url: '/capitulos/introduccion/previoarmado',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/previoarmado.html',
+        }
+      }
+  })
+  // TERMINA INTRODUCCION
+
+
+  // ALBAÑILERIAS
 
 
 
+  // TERMINA ALBAÑILERIAS
+
+
+  // CIMENTACIONES
   .state('app.cimentacion', {
       url: '/capitulos/cimentacion',
       views: {
@@ -171,6 +186,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   });
+
+  // TERMINA CIMENTACIONES
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/capitulos');

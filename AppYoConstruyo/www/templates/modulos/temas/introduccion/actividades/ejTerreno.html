@@ -1,0 +1,32 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeResTerreno()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    ¿Cuál de las siguientes imágenes consideras que es el terreno riesgoso? 
+                    <hr>
+                    <img class="full-image padded" src="img/introduccion/terreno2.png"/>
+                    <img class="full-image padded" src="img/introduccion/terreno3.png"/>
+                    <img class="full-image padded" src="img/introduccion/terreno1.png"/>
+                    
+                    <div class="button-bar">
+                      <button ng-click="checkEjTerreno(false)" class="button button-energized" type="button">1</button>
+                      <button ng-click="checkEjTerreno(true)" class="button button-energized" type="button">2</button>
+                      <button ng-click="checkEjTerreno(false)" class="button button-energized" type="button">3</button>                   
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

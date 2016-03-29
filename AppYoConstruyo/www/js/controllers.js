@@ -40,21 +40,18 @@ angular.module('starter.controllers', [])
     }, 1000);
   };
 
+  // EJERCICIO DISEÑO
   $ionicModal.fromTemplateUrl('templates/ejercicio.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalB = modal;
   });
-
   $scope.closeEjercicio = function() {
     $scope.modalB.hide();
   };
-
-  // Open the login modal
   $scope.ejercicio = function() {
     $scope.modalB.show();
   };
-
   $scope.doCheck = function($result) {
     console.log($result);
     $scope.closeEjercicio();
@@ -66,14 +63,7 @@ angular.module('starter.controllers', [])
       console.log("maaaaal");
       $scope.resultado(false);
     }
-    
-    /*
-    $timeout(function() {
-      $scope.closeEjercicio();
-      $scope.resultado();
-    }, 1000);*/
   };
-
   $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/resultadoBien.html', {
     scope: $scope
   }).then(function(modal) {
@@ -84,13 +74,10 @@ angular.module('starter.controllers', [])
   }).then(function(modal) {
     $scope.modalResMal = modal;
   });
-
   $scope.closeResultado = function() {
     $scope.modalResMal.hide();
     $scope.modalResBien.hide();
   };
-
-  // Open the login modal
   $scope.resultado = function($resultado) {
     if ($resultado)
       $scope.modalResBien.show();
@@ -100,10 +87,20 @@ angular.module('starter.controllers', [])
 
 
   // EJERCICIO TERRENO
-  $ionicModal.fromTemplateUrl('templates/ejTerreno.html', {
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejTerreno.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalTerreno = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/bienTerreno.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienTerreno = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/malTerreno.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalTerreno = modal;
   });
   $scope.ejTerreno = function() {
     $scope.modalTerreno.show();
@@ -113,9 +110,39 @@ angular.module('starter.controllers', [])
   };
   $scope.checkEjTerreno = function($respuesta) {
     $scope.closeEjTerreno();
-    //TODO: seleccionar html de respuesta
+
+    if ($respuesta) {
+      $scope.resultadoTerreno(true);
+    } else {
+      $scope.resultadoTerreno(false);
+    }
+  };
+  $scope.resultadoTerreno = function($resultado) {
+    if ($resultado)
+      $scope.modalBienTerreno.show();
+    else
+      $scope.modalMalTerreno.show();
+  };
+  $scope.closeResTerreno = function() {
+    $scope.modalMalTerreno.hide();
+    $scope.modalBienTerreno.hide();
   };
 
+  // EJERCICIO PROCESOS DE CONSTRUCCION SOSTENIBLE
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejProcesos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalProcesos = modal;
+  });
+  $scope.ejProcesos = function() {
+    $scope.modalProcesos.show();
+  };
+  $scope.closeEjProcesos = function() {
+    $scope.modalProcesos.hide();
+  };
+  $scope.checkEjProcesos = function($) {
+    $scope.closeEjProcesos();
+  };
 
 
 })

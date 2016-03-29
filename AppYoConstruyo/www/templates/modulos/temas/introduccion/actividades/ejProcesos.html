@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjProcesos()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+
+            <div class="card">
+                <div class="list">
+                  <h4 class="padded-text">¿Cuáles son los distribuidores de materiales CEMEX cerca de casa?</h4>
+                  <label class="item item-input item-stacked-label">
+                    <input type="text" placeholder="Tu respuesta">
+                  </label>
+                </div>
+            </div>
+            <button ng-click="checkEjProcesos()" class="button button-positive padded-button">
+              Enviar
+            </button>
+        </form>
+    </ion-content>
+</ion-modal-view>
