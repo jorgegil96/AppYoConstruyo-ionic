@@ -263,8 +263,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/modulos/temas/muros/mamposteria2.html',
         }
       }
-  });
+  })
   //-------------------------------------------
+
+
+  // Cerramientos y Vanos
+  //-------------------------------------------
+  .state('app.cerramientos', {
+      url: '/capitulos/cerramientos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/cerramientos.html',
+        }
+      }
+  })
+  .state('app.cerramientos1', {
+      url: '/capitulos/cerramientos/cerramientos1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/cerramientos/cerramientos1.html',
+        }
+      }
+  })
+  .state('app.cerramientos2', {
+      url: '/capitulos/cerramientos/cerramientos2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/cerramientos/cerramientos2.html',
+        }
+      }
+  });
+
+
+  //-------------------------------------------
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/capitulos');

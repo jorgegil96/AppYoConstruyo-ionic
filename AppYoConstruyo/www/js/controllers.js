@@ -214,6 +214,78 @@ angular.module('starter.controllers', [])
     $scope.modalBienMamposteria.hide();
   };
 
+
+  // EJERCICIO CERRAMIENTOS 1
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/ejCerramientos1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCerramientos1 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/bienCerramientos1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCerramientos1 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/malCerramientos1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCerramientos1 = modal;
+  });
+  $scope.ejCerramientos1 = function() {
+    $scope.modalCerramientos1.show();
+  };
+  $scope.closeEjCerramientos1 = function() {
+    $scope.modalCerramientos1.hide();
+  };
+  $scope.checkEjCerramientos1 = function($respuesta) {
+    $scope.closeEjCerramientos1();
+
+    if ($respuesta)
+      $scope.modalBienCerramientos1.show();
+    else
+      $scope.modalMalCerramientos1.show();
+  };
+  $scope.closeResCerramientos1 = function() {
+    $scope.modalMalCerramientos1.hide();
+    $scope.modalBienCerramientos1.hide();
+  };
+
+
+  // EJERCICIO CERRAMIENTOS 2
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/ejCerramientos2.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCerramientos2 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/bienCerramientos2.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCerramientos2 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cerramientos/actividades/malCerramientos2.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCerramientos2 = modal;
+  });
+  $scope.ejCerramientos2 = function() {
+    $scope.modalCerramientos2.show();
+  };
+  $scope.closeEjCerramientos2 = function() {
+    $scope.modalCerramientos2.hide();
+  };
+  $scope.checkEjCerramientos2 = function($respuesta) {
+    $scope.closeEjCerramientos2();
+
+    if ($respuesta)
+      $scope.modalBienCerramientos2.show();
+    else
+      $scope.modalMalCerramientos2.show();
+  };
+  $scope.closeResCerramientos2 = function() {
+    $scope.modalMalCerramientos2.hide();
+    $scope.modalBienCerramientos2.hide();
+  };
+
 })
 
 .controller('CapitulosCtrl', function($scope) {
@@ -221,9 +293,9 @@ angular.module('starter.controllers', [])
     { title: 'Introducción', id: 1, image: 'header.png', link: 'introduccion'},
     { title: 'Cimentación', id: 2, image: 'cimentacion.png', link: 'cimentacion' },
     { title: 'Muros', id: 3, image: 'muros.png', link: 'muros' },
-    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos.html' },
-    { title: 'Losas', id: 5, image: 'losas.png', link: 'losas.html' },
-    { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea.html' },
-    { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados.html'}
+    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos' },
+    { title: 'Losas', id: 5, image: 'losas.png', link: 'losas' },
+    { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea' },
+    { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados'}
   ];
 });
