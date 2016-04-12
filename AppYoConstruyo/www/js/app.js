@@ -187,26 +187,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
   .state('app.cimfir', {
-      url: '/capitulos/cimentaciones/cimfir',
+      url: '/capitulos/cimentacion/cimfir',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/cimentaciones/cimfir.html',
+          templateUrl: 'templates/modulos/temas/cimentacion/cimfir.html',
         }
       }
   })
   .state('app.firme1', {
-      url: '/capitulos/cimentaciones/firme1',
+      url: '/capitulos/cimentacion/firme1',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/cimentaciones/firme1.html',
+          templateUrl: 'templates/modulos/temas/cimentacion/firme1.html',
         }
       }
   })
   .state('app.firme2', {
-      url: '/capitulos/cimentaciones/firme2',
+      url: '/capitulos/cimentacion/firme2',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/cimentaciones/firme2.html',
+          templateUrl: 'templates/modulos/temas/cimentacion/firme2.html',
         }
       }
   });
