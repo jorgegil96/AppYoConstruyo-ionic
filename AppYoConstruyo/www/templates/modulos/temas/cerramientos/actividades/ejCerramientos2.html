@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjCerramientos2()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    ¿Cuál cerramiento se utiliza en una zona sísmica? 
+                    <hr>
+                    <img class="full-image padded" src="img/cerramientos/correcta.png"/>
+                    <img class="full-image padded" src="img/cerramientos/incorrecta.png"/>
+                    
+                    <div class="button-bar">
+                      <button ng-click="checkEjCerramientos2(true)" class="button button-energized" type="button">A</button>
+                      <button ng-click="checkEjCerramientos2(false)" class="button button-energized" type="button">B</button>                   
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
