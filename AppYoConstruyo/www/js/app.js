@@ -186,6 +186,30 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
+  .state('app.cimfir', {
+      url: '/capitulos/cimentaciones/cimfir',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/cimentaciones/cimfir.html',
+        }
+      }
+  })
+  .state('app.firme1', {
+      url: '/capitulos/cimentaciones/firme1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/cimentaciones/firme1.html',
+        }
+      }
+  })
+  .state('app.firme2', {
+      url: '/capitulos/cimentaciones/firme2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/cimentaciones/firme2.html',
+        }
+      }
+  })
 
   // TERMINA CIMENTACIONES
 
