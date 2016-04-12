@@ -292,9 +292,44 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/modulos/temas/cerramientos/cerramientos2.html',
         }
       }
+  })
+  //-------------------------------------------
+
+
+  // Losas
+  //-------------------------------------------
+  .state('app.losas', {
+      url: '/capitulos/losas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/losas.html',
+        }
+      }
+  })
+  .state('app.cadena', {
+      url: '/capitulos/losas/cadena',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/losas/cadena.html',
+        }
+      }
+  })
+  .state('app.losas1', {
+      url: '/capitulos/losas/losas1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/losas/losas1.html',
+        }
+      }
+  })
+  .state('app.vigeta', {
+      url: '/capitulos/losas/vigeta',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/losas/vigeta.html',
+        }
+      }
   });
-
-
   //-------------------------------------------
 
 
