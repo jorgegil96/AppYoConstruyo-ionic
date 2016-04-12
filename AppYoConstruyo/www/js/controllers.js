@@ -140,10 +140,79 @@ angular.module('starter.controllers', [])
   $scope.closeEjProcesos = function() {
     $scope.modalProcesos.hide();
   };
-  $scope.checkEjProcesos = function($) {
+  $scope.checkEjProcesos = function() {
     $scope.closeEjProcesos();
   };
 
+  // EJERCICIO CASTILLOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/ejCastillo.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCastillo = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/bienCastillo.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCastillo = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/malCastillo.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCastillo = modal;
+  });
+  $scope.ejCastillo = function() {
+    $scope.modalCastillo.show();
+  };
+  $scope.closeEjCastillo = function() {
+    $scope.modalCastillo.hide();
+  };
+  $scope.checkEjCastillo = function($respuesta) {
+    $scope.closeEjCastillo();
+
+    if ($respuesta)
+      $scope.modalBienCastillo.show();
+    else
+      $scope.modalMalCastillo.show();
+  };
+  $scope.closeResCastillo = function() {
+    $scope.modalMalCastillo.hide();
+    $scope.modalBienCastillo.hide();
+  };
+
+  // EJERCICIO MAMPOSTERIA
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/ejMamposteria.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMamposteria = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/bienMamposteria.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienMamposteria = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/malMamposteria.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalMamposteria = modal;
+  });
+  $scope.ejMamposteria = function() {
+    $scope.modalMamposteria.show();
+  };
+  $scope.closeEjMamposteria = function() {
+    $scope.modalMamposteria.hide();
+  };
+  $scope.checkEjMamposteria = function($respuesta) {
+    $scope.closeEjMamposteria();
+
+    if ($respuesta)
+      $scope.modalBienMamposteria.show();
+    else
+      $scope.modalMalMamposteria.show();
+  };
+  $scope.closeResMamposteria = function() {
+    $scope.modalMalMamposteria.hide();
+    $scope.modalBienMamposteria.hide();
+  };
 
 })
 
@@ -151,7 +220,7 @@ angular.module('starter.controllers', [])
   $scope.capitulos = [
     { title: 'Introducción', id: 1, image: 'header.png', link: 'introduccion'},
     { title: 'Cimentación', id: 2, image: 'cimentacion.png', link: 'cimentacion' },
-    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros.html' },
+    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros' },
     { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos.html' },
     { title: 'Losas', id: 5, image: 'losas.png', link: 'losas.html' },
     { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea.html' },

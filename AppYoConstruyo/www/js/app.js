@@ -185,9 +185,62 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/modulos/cimentacion.html',
         }
       }
-  });
+  })
 
   // TERMINA CIMENTACIONES
+
+
+  // MUROS
+  //-------------------------------------------
+  .state('app.muros', {
+      url: '/capitulos/muros',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/muros.html',
+        }
+      }
+  })
+  .state('app.castillos1', {
+      url: '/capitulos/muros/castillos1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/muros/castillos1.html',
+        }
+      }
+  })
+  .state('app.castillos2', {
+      url: '/capitulos/muros/castillos2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/muros/castillos2.html',
+        }
+      }
+  })
+  .state('app.castillos3', {
+      url: '/capitulos/muros/castillos3',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/muros/castillos3.html',
+        }
+      }
+  })
+  .state('app.mamposteria1', {
+      url: '/capitulos/muros/mamposteria1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/muros/mamposteria1.html',
+        }
+      }
+  })
+  .state('app.mamposteria2', {
+      url: '/capitulos/muros/mamposteria2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/muros/mamposteria2.html',
+        }
+      }
+  });
+  //-------------------------------------------
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/capitulos');

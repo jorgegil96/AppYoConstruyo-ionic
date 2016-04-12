@@ -1,0 +1,34 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjCastillo()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>¿Para qué sirven los castillos?</b>
+                    <hr>
+                    <b>A.</b> Ayuda a separar las paredes.<br>
+                    <b>B.</b> Ayuda a distribuir el peso de la losa.<br>
+                    <b>C.</b> Ayuda a distribuir el peso del piso firme.<br>
+                    <b>D.</b> Ninguna de las anteriores <br>
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="checkEjCastillo(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="checkEjCastillo(true)" class="button button-energized" type="button">B</button>
+                      <button ng-click="checkEjCastillo(false)" class="button button-energized" type="button">C</button>
+                      <button ng-click="checkEjCastillo(false)" class="button button-energized" type="button">D</button>                        
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
