@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjArmados()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Relaciona la imagen con su definición 
+                    <hr>
+
+                    <div class="row">
+                        <div class="col">
+                            <img class="full-image" src="img/introduccion/actividades/alambron.png">
+                        </div>
+                        <div class="col col-center">
+                            <img class="full-image" src="img/introduccion/actividades/recocido.png">
+                        </div>
+                    </div>
+
+                    1) Es el aliado de la varilla en la construcción de castillos y otros ensambles básicos para toda obra. Se utiliza en la fabricación de estribos o anillos.<br>
+                    2) Se utiliza como elemento de amarre para los aceros estructurales.<br>
+                    
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="checkEjArmados(true)" class="button button-energized" type="button">A1, B2</button>
+                      <button ng-click="checkEjArmados(false)" class="button button-energized" type="button">A2, B1</button>                 
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

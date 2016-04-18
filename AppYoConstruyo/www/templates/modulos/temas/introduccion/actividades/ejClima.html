@@ -1,0 +1,37 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjClima()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Relaciona las características de las casas con el clima la que corresponden: 
+                    <hr>
+
+                    A) Cálido-seco<br>
+                    B) Cálido-húmedo<br>
+                    C) Templado<br>
+                    <br>
+                    1. Paredes gruesas y el tamaño de las ventanas determinado por la orientación<br>
+                    2. Techos inclinados y ventanas grandes<br>
+                    3. Paredes gruesas, techos altos, pretiles y ventanas pequeñas. <br>
+                    
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="checkEjClima(true)" class="button button-energized" type="button">A3, B2, C1</button>
+                      <button ng-click="checkEjClima(false)" class="button button-energized" type="button">A2, B1, C3</button>                 
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

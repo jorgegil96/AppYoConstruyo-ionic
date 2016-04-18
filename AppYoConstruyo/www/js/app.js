@@ -167,6 +167,54 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
+  .state('app.saco1', {
+      url: '/capitulos/introduccion/concreto/saco1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/actividades/saco1.html',
+        }
+      }
+  })
+  .state('app.saco2', {
+      url: '/capitulos/introduccion/concreto/saco2',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/actividades/saco2.html',
+        }
+      }
+  })
+  .state('app.saco3', {
+      url: '/capitulos/introduccion/concreto/saco3',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/actividades/saco3.html',
+        }
+      }
+  })
+  .state('app.saco4', {
+      url: '/capitulos/introduccion/concreto/saco4',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/actividades/saco4.html',
+        }
+      }
+  })
+  .state('app.saco5', {
+      url: '/capitulos/introduccion/concreto/saco5',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/actividades/saco5.html',
+        }
+      }
+  })
+  .state('app.procedimientos', {
+      url: '/capitulos/introduccion/procedimientos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/introduccion/procedimientos.html',
+        }
+      }
+  })
   // TERMINA INTRODUCCION
 
 

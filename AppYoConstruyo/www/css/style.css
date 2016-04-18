@@ -38,3 +38,10 @@
 .padded-button {
 	margin-left: 10px;
 }
+
+.saco-imagen {
+	height: 200px;
+	width: auto;
+	display: block;
+	margin: auto;
+}

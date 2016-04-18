@@ -128,6 +128,42 @@ angular.module('starter.controllers', [])
     $scope.modalBienTerreno.hide();
   };
 
+  // EJERCICIO CLIMA
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejClima.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalClima = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/bienClima.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienClima = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/malClima.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalClima = modal;
+  });
+  $scope.ejClima = function() {
+    $scope.modalClima.show();
+  };
+  $scope.closeEjClima = function() {
+    $scope.modalClima.hide();
+  };
+  $scope.checkEjClima = function($respuesta) {
+    $scope.closeEjClima();
+
+    if ($respuesta)
+      $scope.modalBienClima.show();
+    else
+      $scope.modalMalClima.show();
+  };
+  $scope.closeResClima = function() {
+    $scope.modalMalClima.hide();
+    $scope.modalBienClima.hide();
+  };
+
+
   // EJERCICIO PROCESOS DE CONSTRUCCION SOSTENIBLE
   $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejProcesos.html', {
     scope: $scope
@@ -143,6 +179,44 @@ angular.module('starter.controllers', [])
   $scope.checkEjProcesos = function() {
     $scope.closeEjProcesos();
   };
+
+
+  // EJERCICIO ARMADOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejArmados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalArmados = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/bienArmados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienArmados = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/malArmados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalArmados = modal;
+  });
+  $scope.ejArmados = function() {
+    $scope.modalArmados.show();
+  };
+  $scope.closeEjArmados = function() {
+    $scope.modalArmados.hide();
+  };
+  $scope.checkEjArmados = function($respuesta) {
+    $scope.closeEjArmados();
+
+    if ($respuesta)
+      $scope.modalBienArmados.show();
+    else
+      $scope.modalMalArmados.show();
+  };
+  $scope.closeResArmados = function() {
+    $scope.modalMalArmados.hide();
+    $scope.modalBienArmados.hide();
+  };
+
+
 
   // EJERCICIO CASTILLOS
   $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/ejCastillo.html', {
