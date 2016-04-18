@@ -396,6 +396,114 @@ angular.module('starter.controllers', [])
     $scope.modalBienCerramientos2.hide();
   };
 
+
+  // EJERCICIO CADENA DE REMATE
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/ejCadena.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCadena = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/bienCadena.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCadena = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/malCadena.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCadena = modal;
+  });
+  $scope.ejCadena = function() {
+    $scope.modalCadena.show();
+  };
+  $scope.closeEjCadena = function() {
+    $scope.modalCadena.hide();
+  };
+  $scope.checkEjCadena = function($respuesta) {
+    $scope.closeEjCadena();
+
+    if ($respuesta)
+      $scope.modalBienCadena.show();
+    else
+      $scope.modalMalCadena.show();
+  };
+  $scope.closeResCadena = function() {
+    $scope.modalMalCadena.hide();
+    $scope.modalBienCadena.hide();
+  };
+
+
+  // EJERCICIO LOSA 1
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/ejLosas1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalLosas1 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/bienLosas1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienLosas1 = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/malLosas1.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalLosas1 = modal;
+  });
+  $scope.ejLosas1 = function() {
+    $scope.modalLosas1.show();
+  };
+  $scope.closeEjLosas1 = function() {
+    $scope.modalLosas1.hide();
+  };
+  $scope.checkEjLosas1 = function($respuesta) {
+    $scope.closeEjLosas1();
+
+    if ($respuesta)
+      $scope.modalBienLosas1.show();
+    else
+      $scope.modalMalLosas1.show();
+  };
+  $scope.closeResLosas1 = function() {
+    $scope.modalMalLosas1.hide();
+    $scope.modalBienLosas1.hide();
+  };
+
+
+  // EJERCICIO VIGETA
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/ejVigeta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalVigeta = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/bienVigeta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienVigeta = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/malVigeta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalVigeta = modal;
+  });
+  $scope.ejVigeta = function() {
+    $scope.modalVigeta.show();
+  };
+  $scope.closeEjVigeta = function() {
+    $scope.modalVigeta.hide();
+  };
+  $scope.checkEjVigeta = function($respuesta) {
+    $scope.closeEjVigeta();
+
+    if ($respuesta)
+      $scope.modalBienVigeta.show();
+    else
+      $scope.modalMalVigeta.show();
+  };
+  $scope.closeResVigeta = function() {
+    $scope.modalMalVigeta.hide();
+    $scope.modalBienVigeta.hide();
+  };
+
 })
 
 .controller('CapitulosCtrl', function($scope) {
