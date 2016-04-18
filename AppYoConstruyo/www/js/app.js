@@ -227,7 +227,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-          .state('app.car_terreno', {
+  .state('app.car_terreno', {
       url: '/capitulos/albanileria/car_terreno',
       views: {
         'menuContent': {
@@ -235,8 +235,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-
-              .state('app.planos', {
+  .state('app.planos', {
       url: '/capitulos/albanileria/planos',
       views: {
         'menuContent': {
@@ -244,7 +243,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-               .state('app.nivelacion', {
+  .state('app.nivelacion', {
       url: '/capitulos/albanileria/nivelacion',
       views: {
         'menuContent': {
@@ -253,7 +252,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
 
-    .state('app.terreno1', {
+  .state('app.terreno1', {
       url: '/capitulos/albanileria/terreno',
       views: {
         'menuContent': {
@@ -261,16 +260,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-
-    .state('app.procedimientos', {
-      url: '/capitulos/albanileria/procedimientos',
+  .state('app.procedimientos2', {
+      url: '/capitulos/albanileria/procedimientos2',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/albanileria/procedimientos.html',
+          templateUrl: 'templates/modulos/temas/albanileria/procedimientos2.html',
         }
       }
   })
-        .state('app.suelo', {
+  .state('app.suelo', {
       url: '/capitulos/albanileria/suelo',
       views: {
         'menuContent': {
@@ -278,7 +276,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-                .state('app.Trazo_nivelacion', {
+  .state('app.Trazo_nivelacion', {
       url: '/capitulos/albanileria/Trazo_nivelacion',
       views: {
         'menuContent': {
@@ -286,7 +284,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-                .state('app.nota_trazo', {
+  .state('app.nota_trazo', {
       url: '/capitulos/albanileria/nota_trazo',
       views: {
         'menuContent': {
@@ -294,7 +292,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-                .state('app.nivelacion0', {
+  .state('app.nivelacion0', {
       url: '/capitulos/albanileria/nivelacion',
       views: {
         'menuContent': {

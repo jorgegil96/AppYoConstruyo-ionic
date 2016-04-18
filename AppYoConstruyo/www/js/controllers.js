@@ -217,6 +217,42 @@ angular.module('starter.controllers', [])
   };
 
 
+  // EJERCICIO ARMADOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/ejProcedimientos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalProcedimientos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/bienProcedimientos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienProcedimientos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/introduccion/actividades/malProcedimientos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalProcedimientos = modal;
+  });
+  $scope.ejProcedimientos = function() {
+    $scope.modalProcedimientos.show();
+  };
+  $scope.closeEjProcedimientos = function() {
+    $scope.modalProcedimientos.hide();
+  };
+  $scope.checkEjProcedimientos = function($respuesta) {
+    $scope.closeEjProcedimientos();
+
+    if ($respuesta)
+      $scope.modalBienProcedimientos.show();
+    else
+      $scope.modalMalProcedimientos.show();
+  };
+  $scope.closeResProcedimientos = function() {
+    $scope.modalMalProcedimientos.hide();
+    $scope.modalBienProcedimientos.hide();
+  };
+
+
 
   // EJERCICIO CASTILLOS
   $ionicModal.fromTemplateUrl('templates/modulos/temas/muros/actividades/ejCastillo.html', {
@@ -365,12 +401,11 @@ angular.module('starter.controllers', [])
 .controller('CapitulosCtrl', function($scope) {
   $scope.capitulos = [
     { title: 'Introducción', id: 1, image: 'header.png', link: 'introduccion'},
-    { title: 'Albañileria', id: 2, image: 'cimentacion.png', link: 'albanileria' },
-    { title: 'Cimentación', id: 3, image: 'cimentacion.png', link: 'cimentacion' },
-    { title: 'Muros', id: 4, image: 'muros.png', link: 'muros' },
-    { title: 'Cerramientos y vanos', id: 5, image: 'cerramientos.png', link: 'cerramientos' },
-    { title: 'Losas', id: 6, image: 'losas.png', link: 'losas' },
-    { title: 'Azotea', id: 7, image: 'azotea.png', link: 'azotea' },
-    { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados'}
+    { title: 'Cimentación', id: 2, image: 'cimentacion.png', link: 'cimentacion' },
+    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros' },
+    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos' },
+    { title: 'Losas', id: 5, image: 'losas.png', link: 'losas' },
+    { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea' },
+    { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados'}
   ];
 });
