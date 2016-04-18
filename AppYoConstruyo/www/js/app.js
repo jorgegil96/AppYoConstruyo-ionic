@@ -219,6 +219,92 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
   // ALBAÑILERIAS
+  .state('app.albanileria', {
+      url: '/capitulos/albanileria',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/albanileria.html',
+        }
+      }
+  })
+          .state('app.car_terreno', {
+      url: '/capitulos/albanileria/car_terreno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/car_terreno.html',
+        }
+      }
+  })
+
+              .state('app.planos', {
+      url: '/capitulos/albanileria/planos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/planos.html',
+        }
+      }
+  })
+               .state('app.nivelacion', {
+      url: '/capitulos/albanileria/nivelacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/nivelacion.html',
+        }
+      }
+  })
+
+    .state('app.terreno1', {
+      url: '/capitulos/albanileria/terreno',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/terreno.html',
+        }
+      }
+  })
+
+    .state('app.procedimientos', {
+      url: '/capitulos/albanileria/procedimientos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/procedimientos.html',
+        }
+      }
+  })
+        .state('app.suelo', {
+      url: '/capitulos/albanileria/suelo',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/suelo.html',
+        }
+      }
+  })
+                .state('app.Trazo_nivelacion', {
+      url: '/capitulos/albanileria/Trazo_nivelacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/Trazo_nivelacion.html',
+        }
+      }
+  })
+                .state('app.nota_trazo', {
+      url: '/capitulos/albanileria/nota_trazo',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/nota_trazo.html',
+        }
+      }
+  })
+                .state('app.nivelacion0', {
+      url: '/capitulos/albanileria/nivelacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/albanileria/nivelacion.html',
+        }
+      }
+  })                
+
+
+
 
 
 
@@ -226,7 +312,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 
   // CIMENTACIONES
-  .state('app.cimentacion', {
+   .state('app.cimentacion', {
       url: '/capitulos/cimentacion',
       views: {
         'menuContent': {
