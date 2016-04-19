@@ -261,10 +261,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
   .state('app.procedimientos2', {
-      url: '/capitulos/albanileria/procedimientos',
+      url: '/capitulos/albanileria/procedimientos2',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/albanileria/procedimientos.html',
+          templateUrl: 'templates/modulos/temas/albanileria/procedimientos2.html',
         }
       }
   })
