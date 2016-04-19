@@ -578,11 +578,12 @@ angular.module('starter.controllers', [])
 .controller('CapitulosCtrl', function($scope) {
   $scope.capitulos = [
     { title: 'Introducción', id: 1, image: 'header.png', link: 'introduccion', color: 'green'},
-    { title: 'Cimentación', id: 2, image: 'cimentacion.png', link: 'cimentacion', color: 'green' },
-    { title: 'Muros', id: 3, image: 'muros.png', link: 'muros', color: '' },
-    { title: 'Cerramientos y vanos', id: 4, image: 'cerramientos.png', link: 'cerramientos', color: '' },
-    { title: 'Losas', id: 5, image: 'losas.png', link: 'losas', color: '' },
-    { title: 'Azotea', id: 6, image: 'azotea.png', link: 'azotea', color: '' },
-    { title: 'Acabados', id: 7, image: 'acabados.png', link: 'acabados', color: ''}
+    { title: 'Albañileria', id: 2, image: 'albanileria.png', link: 'albanileria', color: 'green' },
+    { title: 'Cimentación', id: 3, image: 'cimentacion.png', link: 'cimentacion', color: 'green' },
+    { title: 'Muros', id: 4, image: 'muros.png', link: 'muros', color: '' },
+    { title: 'Cerramientos y vanos', id: 5, image: 'cerramientos.png', link: 'cerramientos', color: '' },
+    { title: 'Losas', id: 6, image: 'losas.png', link: 'losas', color: '' },
+    { title: 'Azotea', id: 7, image: 'azotea.png', link: 'azotea', color: '' },
+    { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''}
   ];
 });
