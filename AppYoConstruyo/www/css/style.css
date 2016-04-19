@@ -45,3 +45,11 @@
 	display: block;
 	margin: auto;
 }
+
+.full-width {
+	width: 100%;
+}
+
+.to-right {
+	margin-left: 0;
+}
