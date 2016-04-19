@@ -1,0 +1,33 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjCimFir()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>¿Cuál de las imágenes pertenece a una cimentación corrida?</b>
+                    <hr>
+
+                    <img class="full-image" src="img/Cimentaciones/actividades/mal.png">
+
+                    <img class="full-image" src="img/Cimentaciones/actividades/bien.png">
+
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="checkEjCimFir(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="checkEjCimFir(true)" class="button button-energized" type="button">B</button>                        
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

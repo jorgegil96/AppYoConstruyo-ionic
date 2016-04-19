@@ -252,6 +252,75 @@ angular.module('starter.controllers', [])
     $scope.modalBienProcedimientos.hide();
   };
 
+  // EJERCICIO CIMENTACIONES Y FIRMES
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/ejCimFir.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCimFir = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/bienCimFir.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCimFir = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/malCimFir.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCimFir = modal;
+  });
+  $scope.ejCimFir = function() {
+    $scope.modalCimFir.show();
+  };
+  $scope.closeEjCimFir = function() {
+    $scope.modalCimFir.hide();
+  };
+  $scope.checkEjCimFir = function($respuesta) {
+    $scope.closeEjCimFir();
+
+    if ($respuesta)
+      $scope.modalBienCimFir.show();
+    else
+      $scope.modalMalCimFir.show();
+  };
+  $scope.closeResCimFir = function() {
+    $scope.modalMalCimFir.hide();
+    $scope.modalBienCimFir.hide();
+  };
+
+  // EJERCICIO FIRME 2
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/ejFirme.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalFirme = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/bienFirme.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienFirme = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/cimentacion/actividades/malFirme.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalFirme = modal;
+  });
+  $scope.ejFirme = function() {
+    $scope.modalFirme.show();
+  };
+  $scope.closeEjFirme = function() {
+    $scope.modalFirme.hide();
+  };
+  $scope.checkEjFirme = function($respuesta) {
+    $scope.closeEjFirme();
+
+    if ($respuesta)
+      $scope.modalBienFirme.show();
+    else
+      $scope.modalMalFirme.show();
+  };
+  $scope.closeResFirme = function() {
+    $scope.modalMalFirme.hide();
+    $scope.modalBienFirme.hide();
+  };
 
 
   // EJERCICIO CASTILLOS
