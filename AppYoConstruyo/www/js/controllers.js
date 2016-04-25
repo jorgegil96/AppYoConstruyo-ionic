@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $http, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -10,34 +10,54 @@ angular.module('starter.controllers', [])
   //});
 
   // Form data for the login modal
-  $scope.loginData = {};
+  $scope.data = {};
 
-  // Create the login modal that we will use later
+  $scope.submit = function() {
+    var link = 'http://phpstack-4722-10615-107090.cloudwaysapps.com/api.php';
+
+    $http.post(link, {username : $scope.data.username}).then(function(res) {
+      $scope.response = res.data;
+    });
+  };
+
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
   });
-
-  // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
   };
-
-  // Open the login modal
   $scope.login = function() {
     $scope.modal.show();
   };
+
+  // Login Data
+  $scope.loginData = {};
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
+    var link = 'http://phpstack-4722-10615-107090.cloudwaysapps.com/api.php';
+
+    $http.post(link, {
+      username: $scope.loginData.username,
+      email: $scope.loginData.email,
+      password: $scope.loginData.password,
+      location: $scope.loginData.location,
+      estado: $scope.loginData.estado,
+      genero: $scope.loginData.genero
+      }).then(function(res) {
+        $scope.loginResponse = res.data;
+      });
+
+
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    //$timeout(function() {
+    //  $scope.closeLogin();
+    //}, 1000);
   };
 
   // EJERCICIO DISEÑO
