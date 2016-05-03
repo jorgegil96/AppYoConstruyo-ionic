@@ -19,6 +19,10 @@ angular.module('starter.controllers', [])
     //$ionicHistory.removeBackView();
   };
 
+  $scope.backMain = function() {
+    $ionicHistory.goBack(-2);
+  }
+
 
   // Form data for the login modal
   $scope.data = {};
