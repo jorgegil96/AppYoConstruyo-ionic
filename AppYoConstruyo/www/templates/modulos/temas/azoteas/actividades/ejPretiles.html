@@ -1,0 +1,28 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjPretiles()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>¿Cuál de las siguientes imagenes considera los petriles para el escurrimiento del agua?</b>
+                    <hr>
+
+                    <img ng-click="checkEjPretiles(false)" class="full-image" src="img/azoteas/100s-64-01.png">
+
+                    <img ng-click="checkEjPretiles(true)" class="full-image" src="img/azoteas/101s-64-01.png">
+                    
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

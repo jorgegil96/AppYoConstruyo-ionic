@@ -39,10 +39,44 @@
         </label>
         <label class="item item-input item-select">
           <div class="input-label">
+            País
+          </div>
+          <select>
+            <option> - </option>
+            <option>Argentina</option>
+            <option>Belice</option>
+            <option>Bolivia</option>
+            <option>Brasil</option>
+            <option>Canadá</option>
+            <option>Chile</option>
+            <option>Colombia</option>
+            <option>Costa Rica</option>
+            <option>Cuba</option>
+            <option>Ecuador</option>
+            <option>El Salvador</option>
+            <option>Estados Unidos</option>
+            <option>Guatemala</option>
+            <option>Honduras</option>
+            <option selected>México</option>
+            <option>Nicaragua</option>
+            <option>Panamá</option>
+            <option>Paraguay</option>
+            <option>Perú</option>
+            <option>Uruguay</option>
+            <option>Venezuela</option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">País (otro)</span>
+          <input type="text" ng-model="loginData.otropais">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
             Estado
           </div>
           <select>
-            <option selected>Aguascalientes</option>
+            <option selected> - </option>
+            <option>Aguascalientes</option>
             <option>Baja California</option>
             <option>Baja California Sur</option>
             <option>Campeche</option>
@@ -79,6 +113,17 @@
         <label class="item item-input">
           <span class="input-label">Ciudad</span>
           <input type="text" ng-model="loginData.ciudad">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Estudios
+          </div>
+          <select>
+            <option selected>Secundaria</option>
+            <option>Preparatoria</option>
+            <option>Licenciatura</option>
+            <option>Postgrado</option>
+          </select>
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Entrar</button>

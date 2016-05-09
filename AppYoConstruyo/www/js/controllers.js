@@ -608,6 +608,55 @@ angular.module('starter.controllers', [])
     $scope.modalBienVigeta.hide();
   };
 
+
+  // EJERCICIO PRETILES
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/azoteas/actividades/ejPretiles.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalPretiles = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/azoteas/actividades/bienPretiles.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienPretiles = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/azoteas/actividades/malPretiles.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalPretiles = modal;
+  });
+  $scope.ejPretiles = function() {
+    $scope.modalPretiles.show();
+  };
+  $scope.closeEjPretiles = function() {
+    $scope.modalPretiles.hide();
+  };
+  $scope.checkEjPretiles = function($respuesta) {
+    $scope.closeEjPretiles();
+
+    if ($respuesta)
+      $scope.modalBienPretiles.show();
+    else
+      $scope.modalMalPretiles.show();
+  };
+  $scope.closeResPretiles = function() {
+    $scope.modalMalPretiles.hide();
+    $scope.modalBienPretiles.hide();
+  };
+
+  // EJERCICIO TERMINACION
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/azoteas/actividades/ejTerminacion.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalTerminacion = modal;
+  });
+  $scope.ejTerminacion = function() {
+    $scope.modalTerminacion.show();
+  };
+  $scope.closeEjTerminacion = function() {
+    $scope.modalTerminacion.hide();
+  };
+
 })
 
 .controller('CapitulosCtrl', function($scope) {
@@ -618,7 +667,7 @@ angular.module('starter.controllers', [])
     { title: 'Muros', id: 4, image: 'muros.png', link: 'muros', color: '' },
     { title: 'Cerramientos y vanos', id: 5, image: 'cerramientos.png', link: 'cerramientos', color: '' },
     { title: 'Losas', id: 6, image: 'losas.png', link: 'losas', color: '' },
-    { title: 'Azotea', id: 7, image: 'azotea.png', link: 'azotea', color: '' },
+    { title: 'Azoteas', id: 7, image: 'azotea.png', link: 'azoteas', color: '' },
     { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''}
   ];
 });

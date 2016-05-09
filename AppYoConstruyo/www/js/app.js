@@ -461,6 +461,35 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/modulos/temas/losas/vigeta.html',
         }
       }
+  })
+  //-------------------------------------------
+
+
+  // Azoteas
+  //-------------------------------------------
+  .state('app.azoteas', {
+      url: '/capitulos/azoteas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/azoteas.html',
+        }
+      }
+  })
+  .state('app.petriles', {
+      url: '/capitulos/azoteas/petriles',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/azoteas/petriles.html',
+        }
+      }
+  })
+  .state('app.terminacion', {
+      url: '/capitulos/azoteas/terminacion',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/azoteas/terminacion.html',
+        }
+      }
   });
   //-------------------------------------------
 
