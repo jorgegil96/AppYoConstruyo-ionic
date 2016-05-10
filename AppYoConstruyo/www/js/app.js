@@ -494,6 +494,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   //-------------------------------------------
 
 
+  // Acabados
+  //-------------------------------------------
+  .state('app.acabados', {
+      url: '/capitulos/acabados',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/acabados.html',
+        }
+      }
+  })
+  .state('app.acabados1', {
+      url: '/capitulos/acabados/acabados',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/acabados.html',
+        }
+      }
+  })
+    .state('app.aplanado_mezcla', {
+      url: '/capitulos/Acabados/aplanado_mezcla',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/aplanado_mezcla.html',
+        }
+      }
+  })
+
+  //-------------------------------------------
+
+
   // Instalaciones Eléctricas
   //-------------------------------------------
   .state('app.electricas', {

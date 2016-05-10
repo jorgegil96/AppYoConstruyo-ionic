@@ -753,5 +753,6 @@ angular.module('starter.controllers', [])
     { title: 'Azoteas', id: 7, image: 'azotea.png', link: 'azoteas', color: '' },
     { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''},
     { title: 'Instalaciones Eléctricas', id: 9, image: 'electricas.png', link: 'electricas', color: ''}
+    
   ];
 });
