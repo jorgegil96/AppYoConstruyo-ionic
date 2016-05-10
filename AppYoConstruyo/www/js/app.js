@@ -490,6 +490,67 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/modulos/temas/azoteas/terminacion.html',
         }
       }
+  })
+  //-------------------------------------------
+
+
+  // Instalaciones Eléctricas
+  //-------------------------------------------
+  .state('app.electricas', {
+      url: '/capitulos/electricas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/electricas.html',
+        }
+      }
+  })
+  .state('app.elecygas', {
+      url: '/capitulos/electricas/elecygas',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/elecygas.html',
+        }
+      }
+  })
+  .state('app.circuitos', {
+      url: '/capitulos/electricas/circuitos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/circuitos.html',
+        }
+      }
+  })
+  .state('app.centrodecarga', {
+      url: '/capitulos/electricas/centrodecarga',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/centrodecarga.html',
+        }
+      }
+  })
+  .state('app.elemelectronicos', {
+      url: '/capitulos/electricas/elemelectronicos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/elemelectronicos.html',
+        }
+      }
+  })
+  .state('app.luminarias', {
+      url: '/capitulos/electricas/luminarias',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/luminarias.html',
+        }
+      }
+  })
+  .state('app.gaslp', {
+      url: '/capitulos/electricas/gaslp',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/electricas/gaslp.html',
+        }
+      }
   });
   //-------------------------------------------
 

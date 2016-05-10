@@ -1,0 +1,40 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjElemelectronicos()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>Relaciona la imagen con el tipo de tapa</b>
+                    <hr>
+
+                    <img class="full-image" src="img/electricas/141s-89-01.png">
+                    
+                    <b>A. </b>Apagador / Contacto / Contacto Doble / Ciega<br>
+                    <b>B. </b>Apagador / Contacto / Contacto Doble / Ciega<br>
+                    <b>C. </b>Ciega / Apagador / Contacto Doble / Contacto<br>
+                    <b>D. </b>Ciega / Apagador / Contacto / Contacto Doble<br>
+
+                    <br>
+
+                    <div class="button-bar">
+                      <button ng-click="checkEjCircuitos(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="checkEjCircuitos(false)" class="button button-energized" type="button">B</button>   
+                      <button ng-click="checkEjCircuitos(true)" class="button button-energized" type="button">C</button>
+                      <button ng-click="checkEjCircuitos(false)" class="button button-energized" type="button">D</button>                
+                    </div>
+                    
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

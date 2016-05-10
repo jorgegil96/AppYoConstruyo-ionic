@@ -1,0 +1,37 @@
+<ion-view view-title="Circuitos">
+    <ion-content class="gray-background">
+        <div class="card">
+            <div class="item item-text-wrap">
+                <b>Circuitos</b>
+                <hr>
+                El sistema de instalación eléctrica está conformado por circuitos que tienen la función de organizar las cargas eléctricas que llegan desde el exterior.<br>
+                <br>
+
+                Es un sistema que combina la fuente de energía, los conductores eléctricos y los accesorios de control necesarios para poder aprovechar la energía. Sirven básicamente como elementos de unión entre las tomas de energía eléctrica como transformadores, interruptores, tableros de distribución y contactos.<br>
+                <br>
+
+                <img class="full-image" src="img/electricas/138s-87-01.png">
+
+                <b>Pueden clasificarse de dos maneras:</b><br>
+                • Los circuitos individuales: son los que alimentan a un solo contacto, lámpara o equipo. Ejemplos: refrigerador, aire acondicionado, lavadora o secadora.<br>
+                • Los circuitos derivados: son los que alimentan a dos o más contactos, lámparas o aparatos. Estos pueden ser de 15 a 20 Amperios para alimentar contactos, luminarias y aparatos pequeños. Sirven para dividir la carga total conectada en diferentes partes.<br>
+                <br>
+                Es recomendable hacer un circuito únicamente para la cocina. <br>
+
+                <br><br>
+
+                <button class="button button-full button-balanced" ng-click="ejCircuitos()">
+                    Ejercicio
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <a ng-click="noBack()" nav-transition="none" href="#/app/capitulos/electricas/elecygas" class="button icon-left ion-chevron-left button-energized full-width">Anterior</a>
+            </div>
+            <div class="col">
+                <a ng-click="noBack()" nav-transition="none" href="#/app/capitulos/electricas/centrodecarga" class="button icon-right ion-chevron-right button-energized full-width">Siguiente</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -657,6 +657,89 @@ angular.module('starter.controllers', [])
     $scope.modalTerminacion.hide();
   };
 
+  // EJERCICIO CIRCUITOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/ejCircuitos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCircuitos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/bienCircuitos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCircuitos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/malCircuitos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCircuitos = modal;
+  });
+  $scope.ejCircuitos = function() {
+    $scope.modalCircuitos.show();
+  };
+  $scope.closeEjCircuitos = function() {
+    $scope.modalCircuitos.hide();
+  };
+  $scope.checkEjCircuitos = function($respuesta) {
+    $scope.closeEjCircuitos();
+
+    if ($respuesta)
+      $scope.modalBienCircuitos.show();
+    else
+      $scope.modalMalCircuitos.show();
+  };
+  $scope.closeResCircuitos = function() {
+    $scope.modalMalCircuitos.hide();
+    $scope.modalBienCircuitos.hide();
+  };
+
+  // EJERCICIO LUMINARIAS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/ejLuminarias.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalLuminarias = modal;
+  });
+  $scope.ejLuminarias = function() {
+    $scope.modalLuminarias.show();
+  };
+  $scope.closeEjLuminarias = function() {
+    $scope.modalLuminarias.hide();
+  };
+
+  // EJERCICIO ELEMENTOS ELECTRONICOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/ejElemelectronicos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalElemelectronicos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/bienElemelectronicos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienElemelectronicos = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/electricas/actividades/malElemelectronicos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalElemelectronicos = modal;
+  });
+  $scope.ejElemelectronicos = function() {
+    $scope.modalElemelectronicos.show();
+  };
+  $scope.closeEjElemelectronicos = function() {
+    $scope.modalElemelectronicos.hide();
+  };
+  $scope.checkEjElemelectronicos = function($respuesta) {
+    $scope.closeEjElemelectronicos();
+
+    if ($respuesta)
+      $scope.modalBienElemelectronicos.show();
+    else
+      $scope.modalMalElemelectronicos.show();
+  };
+  $scope.closeResElemelectronicos = function() {
+    $scope.modalMalElemelectronicos.hide();
+    $scope.modalBienElemelectronicos.hide();
+  };
+
 })
 
 .controller('CapitulosCtrl', function($scope) {
@@ -668,6 +751,7 @@ angular.module('starter.controllers', [])
     { title: 'Cerramientos y vanos', id: 5, image: 'cerramientos.png', link: 'cerramientos', color: '' },
     { title: 'Losas', id: 6, image: 'losas.png', link: 'losas', color: '' },
     { title: 'Azoteas', id: 7, image: 'azotea.png', link: 'azoteas', color: '' },
-    { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''}
+    { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''},
+    { title: 'Instalaciones Eléctricas', id: 9, image: 'electricas.png', link: 'electricas', color: ''}
   ];
 });
