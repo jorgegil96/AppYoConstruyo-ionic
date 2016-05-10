@@ -520,6 +520,54 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
+        .state('app.aplanado_yeso', {
+      url: '/capitulos/Acabados/aplanado_yeso',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/aplanado_yeso.html',
+        }
+      }
+  })
+          .state('app.pintura', {
+      url: '/capitulos/Acabados/pintura',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/pintura.html',
+        }
+      }
+  })
+           .state('app.piso_ceramico', {
+      url: '/capitulos/Acabados/piso_ceramico',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/piso_ceramico.html',
+        }
+      }
+  })
+        .state('app.piso_concetro', {
+      url: '/capitulos/Acabados/piso_concetro',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/piso_concetro.html',
+        }
+      }
+  })
+         .state('app.pisos', {
+      url: '/capitulos/Acabados/pisos',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/pisos.html',
+        }
+      }
+  })
+       .state('app.procedimiento_piso', {
+      url: '/capitulos/Acabados/procedimiento_piso',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/acabados/procedimiento_piso.html',
+        }
+      }
+  })
 
   //-------------------------------------------
 
