@@ -752,7 +752,7 @@ angular.module('starter.controllers', [])
     { title: 'Losas', id: 6, image: 'losas.png', link: 'losas', color: '' },
     { title: 'Azoteas', id: 7, image: 'azotea.png', link: 'azoteas', color: '' },
     { title: 'Acabados', id: 8, image: 'acabados.png', link: 'acabados', color: ''},
-    { title: 'Instalaciones Hidrosanitarias', id: 9, image: 'hidro.png', link: 'acabados', color: ''},
+    { title: 'Instalaciones Hidrosanitarias', id: 9, image: 'hidro.png', link: 'hidrosanitarias', color: ''},
     { title: 'Instalaciones Eléctricas', id: 10, image: 'electricas.png', link: 'electricas', color: ''}
     
   ];

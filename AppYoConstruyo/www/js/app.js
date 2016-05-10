@@ -568,6 +568,53 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
+        //-------------------------------------------
+
+
+  // Instalaciones hidrosanitarias
+  //-------------------------------------------
+  .state('app.hidro', {
+      url: '/capitulos/hidrosanitarias',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/hidrosanitarias.html',
+        }
+      }
+  })
+  .state('app.inst_san', {
+      url: '/capitulos/hidrosanitarias/inst_san',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_san.html',
+        }
+      }
+  })
+  .state('app.inst_hi_san', {
+      url: '/capitulos/hidrosanitarias/inst_hi_san',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_hi_san.html',
+        }
+      }
+  })
+  .state('app.inst_sanitaria', {
+      url: '/capitulos/hidrosanitarias/inst_sanitaria',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_sanitaria.html',
+        }
+      }
+  })
+    .state('app.inst_hidrau', {
+      url: '/capitulos/hidrosanitarias/inst_hidrau',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_hidrau.html',
+        }
+      }
+  })
+  //-------------------------------------------
+
 
   //-------------------------------------------
 
