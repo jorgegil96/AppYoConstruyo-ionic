@@ -513,7 +513,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
     .state('app.aplanado_mezcla', {
-      url: '/capitulos/Acabados/aplanado_mezcla',
+      url: '/capitulos/acabados/aplanado_mezcla',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/aplanado_mezcla.html',
@@ -521,7 +521,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
         .state('app.aplanado_yeso', {
-      url: '/capitulos/Acabados/aplanado_yeso',
+      url: '/capitulos/acabados/aplanado_yeso',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/aplanado_yeso.html',
@@ -529,7 +529,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
           .state('app.pintura', {
-      url: '/capitulos/Acabados/pintura',
+      url: '/capitulos/acabados/pintura',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/pintura.html',
@@ -537,7 +537,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
            .state('app.piso_ceramico', {
-      url: '/capitulos/Acabados/piso_ceramico',
+      url: '/capitulos/acabados/piso_ceramico',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/piso_ceramico.html',
@@ -545,7 +545,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
         .state('app.piso_concetro', {
-      url: '/capitulos/Acabados/piso_concetro',
+      url: '/capitulos/acabados/piso_concetro',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/piso_concetro.html',
@@ -553,7 +553,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
          .state('app.pisos', {
-      url: '/capitulos/Acabados/pisos',
+      url: '/capitulos/acabados/pisos',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/pisos.html',
@@ -561,7 +561,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
   })
        .state('app.procedimiento_piso', {
-      url: '/capitulos/Acabados/procedimiento_piso',
+      url: '/capitulos/acabados/procedimiento_piso',
       views: {
         'menuContent': {
           templateUrl: 'templates/modulos/temas/acabados/procedimiento_piso.html',

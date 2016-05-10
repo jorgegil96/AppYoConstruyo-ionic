@@ -1,0 +1,32 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjCadena()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>¿Para qué sirve la cadena de remate?</b>
+                    <hr>
+                    <b>A.</b> Asegurar la estabilidad del muro<br>
+                    <b>B.</b> Asegurar la estabilidad de la losa.<br>
+                    <b>C.</b> Asegurar la estabilidad del firme<br>
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="checkEjCadena(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="checkEjCadena(true)" class="button button-energized" type="button">B</button>
+                      <button ng-click="checkEjCadena(false)" class="button button-energized" type="button">C</button>                        
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
