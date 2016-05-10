@@ -573,7 +573,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
   // Instalaciones hidrosanitarias
   //-------------------------------------------
-  .state('app.hidro', {
+  .state('app.hidrosanitarias', {
       url: '/capitulos/hidrosanitarias',
       views: {
         'menuContent': {
@@ -597,11 +597,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-  .state('app.inst_sanitaria', {
-      url: '/capitulos/hidrosanitarias/inst_sanitaria',
+  .state('app.inst_hidro', {
+      url: '/capitulos/hidrosanitarias/inst_hidro',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_sanitaria.html',
+          templateUrl: 'templates/modulos/temas/hidrosanitarias/inst_hidro.html',
         }
       }
   })
