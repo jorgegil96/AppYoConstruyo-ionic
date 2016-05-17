@@ -5,130 +5,28 @@
       <button class="button button-clear" ng-click="closeLogin()">Cerrar</button>
     </div>
   </ion-header-bar>
+
   <ion-content class="gray-background">
     <form ng-submit="doLogin()">
-      <div class="list list-inset">
+      <div class="list">
+        <div class="item item-input item-select">
+          <span class="input-label">Género</span>
+          <select>
+              <option>Hombre</option>
+              <option>Mujer</option>
+          </select>
+        </div>
+
         <label class="item item-input">
-          <span class="input-label">Nombre</span>
+          <span class="input-label">Username</span>
           <input type="text" ng-model="loginData.username">
         </label>
         <label class="item item-input">
-          <span class="input-label">Apellido</span>
-          <input type="text" ng-model="loginData.lastname">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Correo</span>
-          <input type="email" ng-model="loginData.email">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Contraseña</span>
+          <span class="input-label">Password</span>
           <input type="password" ng-model="loginData.password">
         </label>
-        <label class="item item-input">
-          <span class="input-label">Fecha de Nacimiento</span>
-          <input type="date" ng-model="loginData.date">
-        </label>
-
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Género
-          </div>
-          <select>
-            <option>Hombre</option>
-            <option>Mujer</option>
-          </select>
-        </label>
-
-        <label class="item item-input item-select">
-          <div class="input-label">
-            País
-          </div>
-          <select>
-            <option> - </option>
-            <option>Argentina</option>
-            <option>Belice</option>
-            <option>Bolivia</option>
-            <option>Brasil</option>
-            <option>Canadá</option>
-            <option>Chile</option>
-            <option>Colombia</option>
-            <option>Costa Rica</option>
-            <option>Cuba</option>
-            <option>Ecuador</option>
-            <option>El Salvador</option>
-            <option>Estados Unidos</option>
-            <option>Guatemala</option>
-            <option>Honduras</option>
-            <option selected>México</option>
-            <option>Nicaragua</option>
-            <option>Panamá</option>
-            <option>Paraguay</option>
-            <option>Perú</option>
-            <option>Uruguay</option>
-            <option>Venezuela</option>
-          </select>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">País (otro)</span>
-          <input type="text" ng-model="loginData.otropais">
-        </label>
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Estado
-          </div>
-          <select>
-            <option selected> - </option>
-            <option>Aguascalientes</option>
-            <option>Baja California</option>
-            <option>Baja California Sur</option>
-            <option>Campeche</option>
-            <option>Coahuila</option>
-            <option>Colima</option>
-            <option>Chiapas</option>
-            <option>Chihuahua</option>
-            <option>Distrito Federal</option>
-            <option>Durango</option>
-            <option>Guanajuato</option>
-            <option>Guerrero</option>
-            <option>Hidalgo</option>
-            <option>Jalisco</option>
-            <option>Estado de México</option>
-            <option>Michoacán</option>
-            <option>Morelos</option>
-            <option>Nayarit</option>
-            <option>Nuevo León</option>
-            <option>Oaxaca</option>
-            <option>Puebla</option>
-            <option>Querétaro</option>
-            <option>Quintana Roo</option>
-            <option>San Luis Potosí</option>
-            <option>Sinaloa</option>
-            <option>Sonora</option>
-            <option>Tabasco</option>
-            <option>Tamaulipas</option>
-            <option>Tlaxcala</option>
-            <option>Veracruz</option>
-            <option>Yucatán</option>
-            <option>Zacatecas</option>
-          </select>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Ciudad</span>
-          <input type="text" ng-model="loginData.ciudad">
-        </label>
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Estudios
-          </div>
-          <select>
-            <option selected>Secundaria</option>
-            <option>Preparatoria</option>
-            <option>Licenciatura</option>
-            <option>Postgrado</option>
-          </select>
-        </label>
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Entrar</button>
+          <button class="button button-block button-positive" type="submit">Log in</button>
         </label>
       </div>
     </form>
@@ -138,5 +36,6 @@
         Response: <b ng-bind="loginResponse"></b>
       </div>
     </div>
+
   </ion-content>
 </ion-modal-view>
