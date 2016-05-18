@@ -544,11 +544,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
   })
-        .state('app.piso_concetro', {
-      url: '/capitulos/acabados/piso_concetro',
+        .state('app.piso_concreto', {
+      url: '/capitulos/acabados/piso_concreto',
       views: {
         'menuContent': {
-          templateUrl: 'templates/modulos/temas/acabados/piso_concetro.html',
+          templateUrl: 'templates/modulos/temas/acabados/piso_concreto.html',
         }
       }
   })

@@ -499,7 +499,178 @@ angular.module('starter.controllers', [])
     $scope.modalMalCerramientos2.hide();
     $scope.modalBienCerramientos2.hide();
   };
+//EJERCICIO ACABADOS ACABADOS
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejAcabados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalAcabados = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienAcabados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienAcabados = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malAcabados.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalAcabados = modal;
+  });
+  $scope.ejAcabados = function() {
+    $scope.modalAcabados.show();
+  };
+    $scope.closeEjPintura = function() {
+    $scope.modalAcabados.hide();
+  };
+  $scope.closeEjPintura = function($respuesta) {
+    $scope.closeEjAcabados();
 
+    if ($respuesta)
+      $scope.modalBienAcabados.show();
+    else
+      $scope.modalMalAcabados.show();
+  };
+    $scope.closeResAcabados = function() {
+    $scope.modalMalAcabados.hide();
+    $scope.modalBienAcabados.hide();
+  };
+  //EJERCICIO ACABADOS PISOS
+      $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejPisos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalPisos = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienPisos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienPisos = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malPisos.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalPisos = modal;
+  });
+  $scope.ejPisos = function() {
+    $scope.modalPisos.show();
+  };
+    $scope.closeEjPisos = function() {
+    $scope.modalPisos.hide();
+  };
+  $scope.CheckEjPisos = function($respuesta) {
+    $scope.closeEjPisos();
+
+    if ($respuesta)
+      $scope.modalBienPisos.show();
+    else
+      $scope.modalMalPisos.show();
+  };
+    $scope.closeResPisos = function() {
+    $scope.modalMalPisos.hide();
+    $scope.modalBienPisos.hide();
+  };
+    //EJERCICIO ACABADOS YESO
+      $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejYeso.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalYeso = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienYeso.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienYeso = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malYeso.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalYeso = modal;
+  });
+  $scope.ejYeso = function() {
+    $scope.modalYeso.show();
+  };
+    $scope.closeEjYeso = function() {
+    $scope.modalYeso.hide();
+  };
+  $scope.CheckEjYeso = function($respuesta) {
+    $scope.closeEjYeso();
+
+    if ($respuesta)
+      $scope.modalBienYeso.show();
+    else
+      $scope.modalMalYeso.show();
+  };
+    $scope.closeResYeso = function() {
+    $scope.modalMalYeso.hide();
+    $scope.modalBienYeso.hide();
+  };
+    //EJERCICIO ACABADOS CERAMICO
+          $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejCeramico.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalCeramico = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienCeramico.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienCeramico = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malCeramico.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalCeramico = modal;
+  });
+  $scope.ejCeramico = function() {
+    $scope.modalCeramico.show();
+  };
+    $scope.closeEjCeramico = function() {
+    $scope.modalCeramico.hide();
+  };
+  $scope.CheckEjCeramico = function($respuesta) {
+    $scope.closeEjCeramico();
+
+    if ($respuesta)
+      $scope.modalBienCeramico.show();
+    else
+      $scope.modalMalCeramico.show();
+  };
+    $scope.closeResYeso = function() {
+    $scope.modalMalCeramico.hide();
+    $scope.modalBienCeramico.hide();
+  };
+    //EJERCICIO ACABADOS CONCRETO
+
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejConcreto.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalConcreto = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienConcreto.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienConcreto = modal;
+  });
+  $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malConcreto.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalConcreto = modal;
+  });
+  $scope.ejConcreto = function() {
+    console.log("tu COLA");
+    $scope.modalConcreto.show();
+  };
+  $scope.closeEjConcreto = function() {
+    $scope.modalConcreto.hide();
+  };
+  $scope.CheckEjConcreto = function($respuesta) {
+    $scope.closeEjConcreto();
+
+    if ($respuesta)
+      $scope.modalBienConcreto.show();
+    else
+      $scope.modalMalConcreto.show();
+  };
+  $scope.closeResConcreto = function() {
+    $scope.modalMalConcreto.hide();
+    $scope.modalBienConcreto.hide();
+  };
 
   // EJERCICIO CADENA DE REMATE
   $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/ejCadena.html', {
@@ -535,8 +706,143 @@ angular.module('starter.controllers', [])
     $scope.modalMalCadena.hide();
     $scope.modalBienCadena.hide();
   };
+  //EJERCICIO HIDRO SANTARIO
+          $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejHisan.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalHisan = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienHisan.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienHisan = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malHisan.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalHisan = modal;
+  });
+  $scope.ejHisan = function() {
+    $scope.modalHisan.show();
+  };
+    $scope.closeEjHisan = function() {
+    $scope.modalHisan.hide();
+  };
+  $scope.CheckEjHisan = function($respuesta) {
+    $scope.closeEjHisan();
 
+    if ($respuesta)
+      $scope.modalBienHisan.show();
+    else
+      $scope.modalMalHisan.show();
+  };
+    $scope.closeResHisan = function() {
+    $scope.modalMalHisan.hide();
+    $scope.modalBienHisan.hide();
+  };
+  //EJERCICIO ACABADOS INSTALACIONES SANITARIAS
+        $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejSani.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalSani = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienSani.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienSani = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malSani.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalSani = modal;
+  });
+  $scope.ejSani = function() {
+    $scope.modalSani.show();
+  };
+    $scope.closeEjSani = function() {
+    $scope.modalSani.hide();
+  };
+  $scope.CheckEjSani = function($respuesta) {
+    $scope.closeEjSani();
 
+    if ($respuesta)
+      $scope.modalBienSani.show();
+    else
+      $scope.modalMalSani.show();
+  };
+    $scope.closeResSani = function() {
+    $scope.modalMalSani.hide();
+    $scope.modalBienSani.hide();
+  };
+  //EJERCICIO ABADO HIDRASANITARIAS
+
+        $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejHidra.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalHidra = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienHidra.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienHidra = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malHidra.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalHidra = modal;
+  });
+  $scope.ejHidra = function() {
+    $scope.modalHidra.show();
+  };
+    $scope.closeEjHidra = function() {
+    $scope.modalHidra.hide();
+  };
+  $scope.CheckEjHidra = function($respuesta) {
+    $scope.closeEjHidra();
+
+    if ($respuesta)
+      $scope.modalBienHidra.show();
+    else
+      $scope.modalMalHidra.show();
+  };
+    $scope.closeResHidra = function() {
+    $scope.modalMalHidra.hide();
+    $scope.modalBienHidra.hide();
+  };
+  //EJERCICIO HIDRO HIDRAULICAS
+          $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejInsta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalInsta = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienInsta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalBienInsta = modal;
+  });
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malInsta.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalMalInsta = modal;
+  });
+  $scope.ejInsta = function() {
+    $scope.modalInsta.show();
+  };
+    $scope.closeEjInsta = function() {
+    $scope.modalInsta.hide();
+  };
+  $scope.CheckEjInsta = function($respuesta) {
+    $scope.closeEjInsta();
+
+    if ($respuesta)
+      $scope.modalBienInsta.show();
+    else
+      $scope.modalMalInsta.show();
+  };
+    $scope.closeResInsta = function() {
+    $scope.modalMalInsta.hide();
+    $scope.modalBienInsta.hide();
+  };
   // EJERCICIO LOSA 1
   $ionicModal.fromTemplateUrl('templates/modulos/temas/losas/actividades/ejLosas1.html', {
     scope: $scope
