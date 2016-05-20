@@ -1,0 +1,34 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjPisos()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <b>¿De que esta compuesta la Arena Cernida?</b>
+                    <hr>
+                    <b>A.</b> FALSA <br>
+                    <b>B.</b> FALSA<br>
+                    <b>C.</b> CIERTA <br>
+                    <b>C.</b> FALSA  <br>
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="CheckEjPisos(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="CheckEjPisos(false)" class="button button-energized" type="button">B</button>
+                      <button ng-click="CheckEjPisos(true)" class="button button-energized" type="button">C</button>
+                      <button ng-click="CheckEjPisos(false)" class="button button-energized" type="button">C</button>                        
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
