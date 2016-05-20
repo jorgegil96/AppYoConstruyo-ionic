@@ -26,6 +26,8 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
             $scope.response = res.data;
         });
     };
+
+    /*
     $ionicModal.fromTemplateUrl('templates/login.html', {
         scope: $scope
     }).then(function(modal) {
@@ -37,28 +39,25 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.login = function() {
         $scope.modal.show();
     };
+    */
+
     // Login Data
-    $scope.loginData = {};
+    //$scope.loginData = {};
     // Perform the login action when the user submits the login form
     $scope.doLogin = function() {
-        console.log('Doing login', $scope.loginData);
-        var link = 'http://phpstack-4722-10615-107090.cloudwaysapps.com/api.php';
-        $http.post(link, {
-            username: $scope.loginData.username,
-            email: $scope.loginData.email,
-            password: $scope.loginData.password,
-            location: $scope.loginData.location,
-            estado: $scope.loginData.estado,
-            genero: $scope.loginData.genero
-        }).then(function(res) {
-            $scope.loginResponse = res.data;
+        console.log('Doing login');
+        var link = 'http://192.168.0.8:8000/api/v1/authenticate';
+
+        $http.post(link, {email: "jorgegilcavazos@gmail.com", password: "passdeprueba"})
+        .success(function(response) {
+            console.log("token:" + response.token);
+        })
+        .error(function(error) {
+            console.log("error");
         });
-        // Simulate a login delay. Remove this and replace with your login
-        // code if using a login system
-        //$timeout(function() {
-        //  $scope.closeLogin();
-        //}, 1000);
     };
+
+    
     // EJERCICIO DISEÑO
     $ionicModal.fromTemplateUrl('templates/ejercicio.html', {
         scope: $scope
@@ -658,10 +657,14 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 		console.log(credentials);
 
 		$auth.login(credentials).then(function() {
+            console.log("hola");
+
 			// Return an $http request for the authenticated user
-            $http.get('http://localhost:8000/api/authenticate/user').success(function(response){
+            $http.get('http://192.168.0.8:8000/api/v1/authenticate/').success(function(response){
                 // Stringify the retured data
                 var user = JSON.stringify(response.user);
+
+                console.log("hola" + user);
  
                 // Set the stringified user data into local storage
                 localStorage.setItem('user', user);
@@ -674,9 +677,9 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
                 	disableBack: true
                 });
  
-                $state.go('app.jokes');
+                $state.go('app');
             })
-            .error(function(){
+            .error(function(error){
                 $scope.loginError = true;
                 $scope.loginErrorText = error.data.error;
                 console.log($scope.loginErrorText);
