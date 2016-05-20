@@ -27,14 +27,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         });
     };
 
-    /*
-    $ionicModal.fromTemplateUrl('templates/login.html', {
-        scope: $scope
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-<<<<<<< HEAD
-  };
+    
 
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -48,33 +41,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modal.show();
   };
 
-  // Login Data
-  $scope.loginData = {};
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    var link = 'http://phpstack-4722-10615-107090.cloudwaysapps.com/api.php';
-
-    $http.post(link, {
-      username: $scope.loginData.username,
-      email: $scope.loginData.email,
-      password: $scope.loginData.password,
-      location: $scope.loginData.location,
-      estado: $scope.loginData.estado,
-      genero: $scope.loginData.genero
-      }).then(function(res) {
-        $scope.loginResponse = res.data;
-      });
-
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    //$timeout(function() {
-    //  $scope.closeLogin();
-    //}, 1000);
-  };
 
   // EJERCICIO DISEÑO
   $ionicModal.fromTemplateUrl('templates/ejercicio.html', {
@@ -1046,14 +1012,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalMalElemelectronicos.hide();
     $scope.modalBienElemelectronicos.hide();
   };
-=======
-    $scope.closeLogin = function() {
-        $scope.modal.hide();
-    };
-    $scope.login = function() {
-        $scope.modal.show();
-    };
-    */
 
     // Login Data
     //$scope.loginData = {};
@@ -1656,7 +1614,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         $scope.modalBienElemelectronicos.hide();
     };
 })
->>>>>>> f10ffec90cc068e32348e3811025b06e9ebfc844
 
 .controller('AuthCtrl', function($scope, $location, $stateParams, $ionicHistory, $http, $state, $auth, $rootScope) {
 	$scope.loginData = {}
