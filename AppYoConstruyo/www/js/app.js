@@ -669,10 +669,66 @@ angular.module('starter', ['ionic', 'starter.controllers', 'satellizer'])
           templateUrl: 'templates/modulos/temas/electricas/gaslp.html',
         }
       }
-  });
+  })
   //-------------------------------------------
-
-
+ // Ecotecnias
+  //-------------------------------------------
+ .state('app.ecotenias', {
+      url: '/capitulos/ecotecnias',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/ecotecnias.html',
+        }
+      }
+  })
+  .state('app.ecotecnias1', {
+      url: '/capitulos/ecotecnias/ecotecnias1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/ecotecnias.html',
+        }
+      }
+  })
+   .state('app.lluvia', {
+      url: '/capitulos/ecotecnias/lluvia',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/lluvia.html',
+        }
+      }
+  })
+   .state('app.lavabo', {
+      url: '/capitulos/ecotecnias/lavabo',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/lavabo.html',
+        }
+      }
+  })
+     .state('app.electrica', {
+      url: '/capitulos/ecotecnias/electrica',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/electrica.html',
+        }
+      }
+  })
+     .state('app.termico', {
+      url: '/capitulos/ecotecnias/termico',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/termico.html',
+        }
+      }
+  })
+     .state('app.cruzada', {
+      url: '/capitulos/ecotecnias/cruzada',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/cruzada.html',
+        }
+      }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/capitulos');
 });

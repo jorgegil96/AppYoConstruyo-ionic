@@ -1722,5 +1722,12 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         image: 'electricas.png',
         link: 'electricas',
         color: ''
+    },
+     {
+        title: 'Ecotecnias',
+        id: 11,
+        image: 'ecotecnias.png',
+        link: 'ecotecnias',
+        color: ''
     }];
 });
