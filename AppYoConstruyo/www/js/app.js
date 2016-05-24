@@ -721,6 +721,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'satellizer'])
         }
       }
   })
+       .state('app.otro', {
+      url: '/capitulos/ecotecnias/otro',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/modulos/temas/ecotecnias/otro.html',
+        }
+      }
+  })
      .state('app.cruzada', {
       url: '/capitulos/ecotecnias/cruzada',
       views: {
