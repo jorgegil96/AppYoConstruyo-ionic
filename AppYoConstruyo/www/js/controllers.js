@@ -17,23 +17,12 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
             $ionicHistory.goBack(-2);
     };
 
-        // Form data for the login modal
-    $scope.data = {};
-    $scope.submit = function() {
-        var link = 'http://phpstack-4722-10615-107090.cloudwaysapps.com/api.php';
-        $http.post(link, {
-            username: $scope.data.username
-        }).then(function(res) {
-            $scope.response = res.data;
-        });
-    };
-
     //Login Data
     $scope.loginData = {};
     $scope.doLogin = function() {
       console.log("Loggin in...");
       $scope.loginResponse = "Iniciando sesión...";
-      var link = 'http://cac9ed67.ngrok.io/api/v1/authenticate';
+      var link = 'http://192.168.0.8:8000/api/v1/authenticate';
 
       var credentials = {
         email: $scope.loginData.email,
@@ -58,7 +47,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.doRegistration = function() {
         console.log('Doing registration');
         $scope.registrationResponse = "Registrando...";
-        var link = 'http://cac9ed67.ngrok.io/register';
+        var link = 'http://192.168.0.8:8000/register';
 
         var userData = {
           nombre: $scope.loginData.nombre,
