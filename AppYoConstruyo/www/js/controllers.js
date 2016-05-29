@@ -29,7 +29,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         password: $scope.loginData.password,
       }
 
-      $http.post(link, credentials)
+      $http.post(link, {email:'jorge.gil@gmail.com',password:'jorge123'})
       .success(function(response) {
           localStorage.setItem("token", response.token);
           console.log("token:" + response.token);
