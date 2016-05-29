@@ -18,12 +18,22 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     };
 
     //Login Data
-    $scope.loginData = {};
+   $scope.loginData = {};
     $scope.doLogin = function() {
       console.log("Loggin in...");
       $scope.loginResponse = "Iniciando sesión...";
-      var link = 'http://192.168.0.8:8000/api/v1/authenticate';
+      //var link = 'http://cac9ed67.ngrok.io/api/v1/authenticate';
+      var link = 'https://www.reddit.com/r/nba.json';
 
+      $http.get(link)
+      .success(function(response) {
+        $scope.loginResponse = "si jala";
+      })
+      .error(function(response) {
+        $scope.loginResponse = "no jala";
+      });
+
+      /*
       var credentials = {
         email: $scope.loginData.email,
         password: $scope.loginData.password,
@@ -39,8 +49,8 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           console.log("error");
           $scope.loginResponse = "Error al iniciar sesión.";
       });
+      */
     }
-
     // Register Data
     $scope.registerData = {};
     // Perform the login action when the user submits the login form
