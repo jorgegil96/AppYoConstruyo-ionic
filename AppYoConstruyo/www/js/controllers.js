@@ -29,7 +29,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         password: $scope.loginData.password,
       }
 
-      $http.post(link, {email:'jorge.gil@gmail.com',password:'jorge123'})
+      $http.post(link, credentials)
       .success(function(response) {
           localStorage.setItem("token", response.token);
           console.log("token:" + response.token);
@@ -80,6 +80,11 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         });
     };
 
+    $scope.doLogout = function(){
+      console.log('Loging out...');
+      localStorage.removeItem("token");
+      
+    }
   //PREP LOGIN
   $scope.prepLogin = function(type) {
     if (localStorage.getItem("token") === null) {
