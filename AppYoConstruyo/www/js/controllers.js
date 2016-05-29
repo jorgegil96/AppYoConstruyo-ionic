@@ -16,6 +16,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.backMain = function() {
             $ionicHistory.goBack(-2);
     };
+
         // Form data for the login modal
     $scope.data = {};
     $scope.submit = function() {
@@ -27,20 +28,126 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         });
     };
 
-    
+    //Login Data
+    $scope.loginData = {};
+    $scope.doLogin = function() {
+      console.log("Loggin in...");
+      $scope.loginResponse = "Iniciando sesión...";
+      var link = 'http://cac9ed67.ngrok.io/api/v1/authenticate';
 
+      var credentials = {
+        email: $scope.loginData.email,
+        password: $scope.loginData.password,
+      }
+
+      $http.post(link, credentials)
+      .success(function(response) {
+          localStorage.setItem("token", response.token);
+          console.log("token:" + response.token);
+          $scope.loginResponse = "Sesión iniciada.";
+      })
+      .error(function(error) {
+          console.log("error");
+          $scope.loginResponse = "Error al iniciar sesión.";
+      });
+    }
+
+    // Register Data
+    $scope.registerData = {};
+    // Perform the login action when the user submits the login form
+    $scope.doRegistration = function() {
+        console.log('Doing registration');
+        $scope.registrationResponse = "Registrando...";
+        var link = 'http://cac9ed67.ngrok.io/register';
+
+        var userData = {
+          nombre: $scope.loginData.nombre,
+          apellido: $scope.loginData.apellido,
+          genero: $scope.loginData.genero,
+          email: $scope.loginData.email,
+          password: $scope.loginData.password,
+          nacimiento: $scope.loginData.date,
+          pais: $scope.loginData.pais,
+          estado: $scope.loginData.estado,
+          ciudad: $scope.loginData.ciudad,
+          estudios: $scope.loginData.estudios
+        }
+
+        console.log(JSON.stringify(userData));
+
+        $http.post(link, userData)
+        .success(function(response) {
+            console.log(JSON.stringify(response));
+            localStorage.setItem("token", response.token);
+
+            $scope.registrationResponse = "Usuario creado.";
+
+            console.log("token:" + response.token);
+        })
+        .error(function(error) {
+            console.log("error");
+
+            $scope.registrationResponse = "Error al registrarse.";
+        });
+    };
+
+  //PREP LOGIN
+  $scope.prepLogin = function(type) {
+    if (localStorage.getItem("token") === null) {
+      console.log(type);
+      // TYPE
+      // 0 => login
+      // 1 => registration 
+      if (type == 0) {
+        $scope.login();
+      } else {
+        $scope.registration();
+      }
+      
+    } else {
+      $scope.logout();
+    }
+  };
+
+    
+  //LOGIN
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
-    $scope.modal = modal;
+    $scope.modalLogin = modal;
   });
   $scope.closeLogin = function() {
-    $scope.modal.hide();
+    $scope.modalLogin.hide();
   };
   $scope.login = function() {
-    $scope.modal.show();
+    $scope.modalLogin.show();
   };
 
+  //LOG OUT
+  $ionicModal.fromTemplateUrl('templates/logout.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalLogout = modal;
+  });
+  $scope.closeLogout = function() {
+    $scope.modalLogout.hide();
+  };
+  $scope.logout = function() {
+    $scope.modalLogout.show();
+  };
+
+  //REGISTRO
+  $ionicModal.fromTemplateUrl('templates/registration.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalRegistration = modal;
+  });
+  $scope.closeRegistration = function() {
+    $scope.modalRegistration.hide();
+  };
+  $scope.registration = function() {
+    $scope.modalRegistration.show();
+  };
 
   // EJERCICIO DISEÑO
   $ionicModal.fromTemplateUrl('templates/ejercicio.html', {
@@ -1013,21 +1120,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalBienElemelectronicos.hide();
   };
 
-    // Login Data
-    //$scope.loginData = {};
-    // Perform the login action when the user submits the login form
-    $scope.doLogin = function() {
-        console.log('Doing login');
-        var link = 'http://192.168.0.8:8000/api/v1/authenticate';
-
-        $http.post(link, {email: "jorgegilcavazos@gmail.com", password: "passdeprueba"})
-        .success(function(response) {
-            console.log("token:" + response.token);
-        })
-        .error(function(error) {
-            console.log("error");
-        });
-    };
+  
 
     
     // EJERCICIO DISEÑO
@@ -1622,10 +1715,18 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
 	$scope.login = function() {
 		var credentials = {
+      nombre: $scope.loginData.nombre,
+      apellido: $scope.loginData.apellido,
+      genero: $scope.loginData.genero,
 			email: $scope.loginData.email,
-			password: $scope.loginData.password
+			password: $scope.loginData.password,
+      nacimiento: $scope.loginData.date,
+      pais: $scope.loginData.pais,
+      estado: $scope.loginData.estado,
+      ciudad: $scope.loginData.ciudad
 		}
 
+    console.log("hola1");
 		console.log(credentials);
 
 		$auth.login(credentials).then(function() {
@@ -1659,7 +1760,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 		});
 	}
 })
-
 
 .controller('CapitulosCtrl', function($scope) {
     $scope.capitulos = [{

@@ -34,15 +34,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'satellizer'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-  .state('app.auth', {
-    url: '/auth',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/login.html',
-        controller: 'AuthCtrl'
-      }
-    }
-  })
   .state('app.capitulos', {
       url: '/capitulos',
       views: {

@@ -1,0 +1,24 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Cerrar Sesión</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogout()">Cerrar</button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="gray-background">
+    <div class="card">
+      <div class="item item-text-wrap">
+        Ya iniciaste sesión.
+      </div>
+    </div>
+    <form ng-submit="doLogout()">
+      <div class="list card">
+        <label class="item">
+          <button class="button button-block button-assertive" type="submit">Cerrar Sesión</button>
+        </label>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-modal-view>

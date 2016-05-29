@@ -9,31 +9,25 @@
   <ion-content class="gray-background">
     <form ng-submit="doLogin()">
       <div class="list">
-        <div class="item item-input item-select">
-          <span class="input-label">Género</span>
-          <select>
-              <option>Hombre</option>
-              <option>Mujer</option>
-          </select>
-        </div>
 
         <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="email" ng-model="loginData.email">
         </label>
         <label class="item item-input">
-          <span class="input-label">Password</span>
+          <span class="input-label">Contraseña</span>
           <input type="password" ng-model="loginData.password">
         </label>
+
         <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
+          <button class="button button-block button-positive" type="submit">Entrar</button>
         </label>
       </div>
     </form>
 
     <div class="card">
       <div class="item item-text-wrap">
-        Response: <b ng-bind="loginResponse"></b>
+        <b ng-bind="loginResponse"></b>
       </div>
     </div>
 
