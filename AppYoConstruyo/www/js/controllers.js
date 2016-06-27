@@ -785,17 +785,17 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalBienCadena.hide();
   };
   //EJERCICIO HIDRO SANTARIO
-          $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejHisan.html', {
+          $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejHisan.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalHisan = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienHisan.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienHisan.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalBienHisan = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malHisan.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malHisan.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalMalHisan = modal;
@@ -854,17 +854,17 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
   };
   //EJERCICIO ABADO HIDRASANITARIAS
 
-        $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejHidra.html', {
+        $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejHidra.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalHidra = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienHidra.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienHidra.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalBienHidra = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malHidra.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malHidra.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalMalHidra = modal;
@@ -888,17 +888,17 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalBienHidra.hide();
   };
   //EJERCICIO HIDRO HIDRAULICAS
-          $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/ejInsta.html', {
+          $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/ejInsta.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalInsta = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/bienInsta.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/bienInsta.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalBienInsta = modal;
   });
-    $ionicModal.fromTemplateUrl('templates/modulos/temas/hidrosanitarias/actividades/malInsta.html', {
+    $ionicModal.fromTemplateUrl('templates/modulos/temas/acabados/actividades/malInsta.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modalMalInsta = modal;

@@ -1,0 +1,36 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">
+            Ejercicio
+        </h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeEjHisan()">
+                Cerrar
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="gray-background">
+        <form name="ejercicio-diseno" >
+            <div class="card">
+                <div class="item item-text-wrap">
+  <b>¿Puedes localizar en dónde se requieren instalaciones hidro-sanitarias? </b>
+                    <hr>
+                    <b>A.</b> Cocina  <br>
+                    <b>B.</b> Baños <br>
+                    <b>C.</b> Lavandería  <br>
+                    <b>D.</b> Todas las anteriores  <br>
+                    <br>
+                    <br>
+                    <div class="button-bar">
+                      <button ng-click="CheckEjHisan(false)" class="button button-energized" type="button">A</button>
+                      <button ng-click="CheckEjHisan(false)" class="button button-energized" type="button">B</button>
+                      <button ng-click="CheckEjHisan(false)" class="button button-energized" type="button">C</button>
+                      <button ng-click="CheckEjHisan(true)" class="button button-energized" type="button">D</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
