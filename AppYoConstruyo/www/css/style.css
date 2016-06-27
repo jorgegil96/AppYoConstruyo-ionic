@@ -53,3 +53,7 @@
 .to-right {
 	margin-left: 0;
 }
+/* Color del boton exit */
+.button.button-clear{
+	color:black;
+}
