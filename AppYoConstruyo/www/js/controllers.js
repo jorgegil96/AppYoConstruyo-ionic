@@ -16,7 +16,20 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.backMain = function() {
             $ionicHistory.goBack(-2);
     };
+ $scope.goFinal = function() {
+   var confirmPopup = $ionicPopup.confirm({
+     title: 'Consume Ice Cream',
+     template: 'Are you sure you want to eat this ice cream?'
+   });
 
+   confirmPopup.then(function(res) {
+     if(res) {
+       console.log('You are sure');
+     } else {
+       console.log('You are not sure');
+     }
+   });
+ };
     //Login Data
    $scope.loginData = {};
     $scope.doLogin = function() {
