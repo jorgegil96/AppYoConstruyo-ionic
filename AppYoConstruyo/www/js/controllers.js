@@ -1,4 +1,4 @@
-angular.module('starter.controllers', []).controller('AppCtrl', function($scope, $http, $ionicModal, $timeout, $ionicHistory) {
+angular.module('starter.controllers', []).controller('AppCtrl', function($scope, $http, $ionicModal, $timeout, $ionicHistory, $ionicPopup) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
@@ -16,20 +16,28 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.backMain = function() {
             $ionicHistory.goBack(-2);
     };
- $scope.goFinal = function() {
-   var confirmPopup = $ionicPopup.confirm({
-     title: 'Consume Ice Cream',
-     template: 'Are you sure you want to eat this ice cream?'
-   });
+$scope.goFinal = function() {
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    title: '<h4><b>¡Muchas Felicidades!</b></h4>',
+    subTitle: '<div align="left">Has concluido todos los temas del curso de auto-construcción Yo Construyo. Agradecemos tu tiempo y la confianza depositada en el mismo. A continuación te pedimos tu apoyo para contestar la siguiente encuesta de salida, con el objetivo de mejorar la aplicación.</div><br> Te invitamos también a escribirnos tus dudas y comentarios a:<br>info@cdcs.com.mx <br>+52 (81) 8358-2000 ext.5262,Síguenos en Facebook y Twitter: /CentroCEMEXTEC',
+    scope: $scope,
+    buttons: [
+      {
+        text: '<b>Encuesta</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+           window.open('https://docs.google.com/forms/d/1zshZF0w5L6VjTMaAGq5O0AUk7OQvonvqVNUIDBWqpcY/viewform', '_blank');
+        }
+      }
+    ]
+  });
 
-   confirmPopup.then(function(res) {
-     if(res) {
-       console.log('You are sure');
-     } else {
-       console.log('You are not sure');
-     }
-   });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
  };
+    
     //Login Data
    $scope.loginData = {};
     $scope.doLogin = function() {
