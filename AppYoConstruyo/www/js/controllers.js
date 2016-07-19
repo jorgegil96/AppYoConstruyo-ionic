@@ -19,7 +19,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 $scope.goFinal = function() {
   // An elaborate, custom popup
   var myPopup = $ionicPopup.show({
-    title: '<h4><b>¡Muchas Felicidades!</b></h4>',
+    title: '<h3><b>¡Muchas Felicidades!</b></h3>',
     subTitle: '<div align="left">Has concluido todos los temas del curso de auto-construcción Yo Construyo. Agradecemos tu tiempo y la confianza depositada en el mismo. A continuación te pedimos tu apoyo para contestar la siguiente encuesta de salida, con el objetivo de mejorar la aplicación.</div><br> Te invitamos también a escribirnos tus dudas y comentarios a:<br>info@cdcs.com.mx <br>+52 (81) 8358-2000 ext.5262,Síguenos en Facebook y Twitter: /CentroCEMEXTEC',
     scope: $scope,
     buttons: [
@@ -27,7 +27,7 @@ $scope.goFinal = function() {
         text: '<b>Encuesta</b>',
         type: 'button-positive',
         onTap: function(e) {
-           window.open('https://docs.google.com/forms/d/1zshZF0w5L6VjTMaAGq5O0AUk7OQvonvqVNUIDBWqpcY/viewform', '_blank');
+            window.open('https://docs.google.com/forms/d/1zshZF0w5L6VjTMaAGq5O0AUk7OQvonvqVNUIDBWqpcY/viewform','_system','location=yes'); 
         }
       }
     ]
