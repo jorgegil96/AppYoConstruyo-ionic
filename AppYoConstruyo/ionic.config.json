@@ -1,0 +1,13 @@
+{
+  "name": "AppYoConstruyo",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "defaultBrowser": "chrome"
+}
