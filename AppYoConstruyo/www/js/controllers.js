@@ -6,18 +6,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
-    $scope.checkRegistered = function(capitulo) {
-      console.log("checking...");
-      // Check that user is logged in
-      if (window.localStorage && !window.localStorage.getItem('registered')) {
-        console.log("Not registered");
-          //$scope.registration();
-          //$location.path("/introduccion");
-      } else {
-
-      }
-    };
-
     $scope.noBack = function() {
         console.log('go back', ':)');
         $ionicHistory.nextViewOptions({
@@ -52,110 +40,111 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         console.log('Tapped!', res);
       });
     };
-    
-    //Login Data
-   $scope.loginData = {};
-    $scope.doLogin = function() {
-      console.log("Loggin in...");
-      $scope.loginResponse = "Iniciando sesión...";
-      //var link = 'http://cac9ed67.ngrok.io/api/v1/authenticate';
-      var link = 'https://www.reddit.com/r/nba.json';
 
-      $http.get(link)
-      .success(function(response) {
-        $scope.loginResponse = "si jala";
-      })
-      .error(function(response) {
-        $scope.loginResponse = "no jala";
-      });
 
-      /*
-      var credentials = {
-        email: $scope.loginData.email,
-        password: $scope.loginData.password,
+    $scope.checkRegistered = function(capitulo) {
+      console.log("checking...");
+      // Check that user is logged in
+      if (window.localStorage.getItem('registered') != true) {
+        console.log("Not registered");
+        // Force the user to register before using the app.
+        $scope.registration();
+        $scope.modalRegistration.backdropClickToClose = false;
+        $scope.modalRegistration.hardwareBackButtonClose = false;
+      } else {
+        console.log("Registered");
+        var token = localStorage.getItem("token");
+        if (token != null) {
+          $scope.refreshToken();
+        }
       }
-
-      $http.post(link, credentials)
-      .success(function(response) {
-          localStorage.setItem("token", response.token);
-          console.log("token:" + response.token);
-          $scope.loginResponse = "Sesión iniciada.";
-      })
-      .error(function(error) {
-          console.log("error");
-          $scope.loginResponse = "Error al iniciar sesión.";
-      });
-      */
-    }
-    // Register Data
-    $scope.registerData = {};
-    // Perform the login action when the user submits the login form
-    $scope.doRegistration = function() {
-        console.log('Doing registration');
-        $scope.registrationResponse = "Registrando...";
-        var link = 'http://192.168.0.8:8000/api/v1/register';
-
-
-
-        $http.post(link, {
-          name: $scope.loginData.nombre, 
-          lastname: $scope.loginData.apellido,
-          email: $scope.loginData.email, 
-          password: $scope.loginData.password,
-          password_confirmation: $scope.loginData.password_confirm,
-          gender: $scope.loginData.genero,
-          dob: $scope.loginData.date,
-          country: $scope.loginData.pais,
-          state: $scope.loginData.estado,
-          city: $scope.loginData.ciudad,
-          education: $scope.loginData.estudios
-        })
-        .success(function(res) {
-          console.log(JSON.stringify(res));
-          if (res.registration != null) {
-            console.log(res.registration);
-            $scope.registrationResponse = "Usuario creado";
-          } else if (res.email != null) {
-            $scope.registrationResponse = "Email en uso o invalido";
-            console.log(res.email);
-          } else if (res.password != null) {
-            $scope.registrationResponse = "Las contraseñas deben de coincidir y ser de 6 o más caracteres";
-          } else {
-            $scope.registrationResponse = "Campos invalidos";
-          }
-        })
-        .error(function(e) {
-          $scope.registrationResponse = "Error... revisa tu conexión a internet";
-        });
-          /*
-        console.log(JSON.stringify(userData));
-
-        $http.post(link, userData)
-        .success(function(response) {
-            console.log(JSON.stringify(response));
-            localStorage.setItem("token", response.token);
-
-            $scope.registrationResponse = "Usuario creado.";
-
-            console.log("token:" + response.token);
-        })
-        .error(function(error) {
-            console.log("error");
-
-            $scope.registrationResponse = "Error al registrarse.";
-        });
-        */
     };
 
-    $scope.doLogout = function(){
-      console.log('Loging out...');
-      localStorage.removeItem("token");
-      
-    }
-  //PREP LOGIN
-  $scope.prepLogin = function(type) {
-    if (localStorage.getItem("token") === null) {
-      console.log(type);
+    // Perform the login action
+    $scope.doLogin = function() {
+      console.log("Logging in...");
+      $scope.loginResponse = "Iniciando sesión...";
+      var link = 'http://192.168.0.8:8000/api/v1/authenticate';
+
+      var credentials = {
+        email: $scope.loginData.email,
+        password: $scope.loginData.password
+      };
+
+      console.log(JSON.stringify(credentials));
+
+      $http.post(link, credentials)
+      .success(function(res) {
+        console.log(JSON.stringify(res));
+        if (res.token != null) {
+          console.log(res.token);
+          $scope.loginResponse = "Sesión Iniciada";
+          localStorage.setItem("token", res.token);
+          $scope.closeLogin();
+          $scope.modalLogin.backdropClickToClose = true;
+          $scope.modalLogin.hardwareBackButtonClose = true;
+        } else {
+          console.log(res.token);
+          $scope.loginResponse = "No se pudo iniciar sesión";
+        }
+      })
+      .error(function(e) {
+        $scope.registrationResponse = "Revisa tu conexión a internet";
+      });
+
+    };
+
+    // Perform the registration action when the user submits the registration form
+    $scope.doRegistration = function() {
+      console.log('Doing registration');
+      $scope.registrationResponse = "Registrando...";
+      var link = 'http://192.168.0.8:8000/api/v1/register';
+
+      var userData = {
+        name: $scope.loginData.nombre, 
+        last_name: $scope.loginData.apellido,
+        email: $scope.loginData.email, 
+        password: $scope.loginData.password,
+        password_confirmation: $scope.loginData.password_confirm,
+        gender: $scope.loginData.genero,
+        dob: $scope.loginData.date,
+        country: $scope.loginData.pais,
+        state: $scope.loginData.estado,
+        city: $scope.loginData.ciudad,
+        education: $scope.loginData.estudios
+      };
+
+      console.log(JSON.stringify(userData));
+
+      $http.post(link, userData)
+      .success(function(res) {
+        console.log(JSON.stringify(res));
+        if (res.registration != null) {
+          console.log(res.registration);
+          $scope.registrationResponse = "Usuario creado";
+          localStorage.setItem("registered", true);
+          $scope.closeRegistration();
+          $scope.modalRegistration.backdropClickToClose = true;
+          $scope.modalRegistration.hardwareBackButtonClose = true;
+
+          $scope.login();
+          $scope.modalLogin.backdropClickToClose = false;
+          $scope.modalLogin.hardwareBackButtonClose = false;
+        } else if (res.email != null) {
+          $scope.registrationResponse = "Email en uso o invalido";
+          console.log(res.email);
+        } else if (res.password != null) {
+          $scope.registrationResponse = "Las contraseñas deben de coincidir y ser de 6 o más caracteres";
+        } else {
+          $scope.registrationResponse = "Campos invalidos";
+        }
+      })
+      .error(function(e) {
+        $scope.registrationResponse = "Revisa tu conexión a internet";
+      });
+    };
+
+    $scope.prepLogin = function(type) {
       // TYPE
       // 0 => login
       // 1 => registration 
@@ -164,11 +153,63 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
       } else {
         $scope.registration();
       }
-      
-    } else {
-      $scope.logout();
-    }
-  };
+    };
+
+    $scope.refreshToken = function() {
+      console.log("Refreshing token...");
+      var link = "http://192.168.0.8:8000/api/v1/refresh?token=";
+      var token = localStorage.getItem("token");
+      if (token != null) {
+        $http.post(link + token)
+        .success(function(res) {
+          if (res.token != null) {
+            console.log("Got new token: " + JSON.stringify(res));
+            localStorage.setItem("token", res.token);
+          } else {
+            console.log("Could not get new token");
+            $scope.login();
+          }
+        })
+        .error(function(e) {
+          console.log("Error refreshing token");
+        });
+      }
+    };
+
+    $scope.uploadProgress = function() {
+      console.log("Uploading progress...");
+      var link = "http://192.168.0.8:8000/api/v1/";
+      var progress = localStorage.getItem("progress");
+      if (progress != null) {
+
+      }
+    };
+
+    $scope.saveProgress = function (id) {
+      var progress = localStorage.getItem("progress");
+      if (progress == null) {
+        console.log("progress null");
+        progress = [];
+      } else {
+        console.log("progress not null");
+        console.log("progress: " + progress);
+        progress = JSON.parse(progress);
+      }
+      progress[id] = true;
+
+      console.log("new: " + JSON.stringify(progress));
+      localStorage.setItem("progress", JSON.stringify(progress));
+    };
+
+    $scope.getColor = function(id) {
+      console.log("get color of " + id);
+      var moduloProgress = localStorage.getItem("moduloProgress");
+      if (moduloProgress == null) {
+        moduloProgress = [];
+      } else {
+        moduloProgress = JSON.parse(progress);
+      }
+    };
 
     
   //LOGIN
@@ -1769,59 +1810,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     };
 })
 
-.controller('AuthCtrl', function($scope, $location, $stateParams, $ionicHistory, $http, $state, $auth, $rootScope) {
-	$scope.loginData = {}
-	$scope.loginError = false;
-	$scope.loginErrorText;
-
-	$scope.login = function() {
-		var credentials = {
-      nombre: $scope.loginData.nombre,
-      apellido: $scope.loginData.apellido,
-      genero: $scope.loginData.genero,
-			email: $scope.loginData.email,
-			password: $scope.loginData.password,
-      nacimiento: $scope.loginData.date,
-      pais: $scope.loginData.pais,
-      estado: $scope.loginData.estado,
-      ciudad: $scope.loginData.ciudad
-		}
-
-    console.log("hola1");
-		console.log(credentials);
-
-		$auth.login(credentials).then(function() {
-            console.log("hola");
-
-			// Return an $http request for the authenticated user
-            $http.get('http://192.168.0.8:8000/api/v1/authenticate/').success(function(response){
-                // Stringify the retured data
-                var user = JSON.stringify(response.user);
-
-                console.log("hola" + user);
- 
-                // Set the stringified user data into local storage
-                localStorage.setItem('user', user);
- 
-                // Getting current user data from local storage
-                $rootScope.currentUser = response.user;
-                // $rootScope.currentUser = localStorage.setItem('user');;
-                    
-                $ionicHistory.nextViewOptions({
-                	disableBack: true
-                });
- 
-                $state.go('app');
-            })
-            .error(function(error){
-                $scope.loginError = true;
-                $scope.loginErrorText = error.data.error;
-                console.log($scope.loginErrorText);
-            })
-		});
-	}
-})
-
 .controller('CapitulosCtrl', function($scope) {
     $scope.capitulos = [{
         title: 'Introducción',
@@ -1883,8 +1871,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         image: 'electricas.png',
         link: 'electricas',
         color: ''
-    },
-     {
+    }, {
         title: 'Ecotecnias',
         id: 11,
         image: 'ecotecnias.png',

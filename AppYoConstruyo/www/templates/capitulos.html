@@ -3,14 +3,14 @@
         <ion-list>
             <div ng-repeat="capitulo in capitulos" class="list card hoverable">
                 <div class="item-image">
-                    <a ng-click="checkRegistered('{{capitulo.link}}')">
+                    <a ng-click="checkRegistered('{{capitulo.link}}')" href="#/app/capitulos/{{capitulo.link}}">
                         <img src="img/cards/{{capitulo.image}}"/>
                     </a>
                 </div>
                 <div class="item item-body card-box">
-                    <a class="item item-icon-right" href="#/app/capitulos/{{capitulo.link}}">
+                    <a class="item item-icon-right" ng-click="checkRegistered('{{capitulo.link}}')" href="#/app/capitulos/{{capitulo.link}}">
                     {{capitulo.title}}
-                    <i class="{{capitulo.color}}-text icon ion-checkmark-circled"></i>
+                    <i class="green-text icon ion-checkmark-circled"></i>
                     </a>
                 </div>
             </div>

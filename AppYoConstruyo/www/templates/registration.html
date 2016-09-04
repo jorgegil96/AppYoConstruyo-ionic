@@ -2,7 +2,7 @@
   <ion-header-bar>
     <h1 class="title">Registro</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeRegistration()">Cerrar</button>
+      <button class="button button-clear">Cerrar</button>
     </div>
   </ion-header-bar>
 
@@ -13,32 +13,38 @@
       <div class="list card">
 
         <label class="item item-input">
-            <span class="input-label">Nombre</span>
+            <span class="input-label">Nombre(s)</span>
             <input type="text" ng-model="loginData.nombre">
         </label>
         <label class="item item-input">
-            <span class="input-label">Apellido</span>
+            <span class="input-label">Apellido(s)</span>
             <input type="text" ng-model="loginData.apellido">
         </label>
 
-        <div class="item item-input item-select">
+        <label class="item item-input item-select">
           <span class="input-label">Género</span>
-          <ion-select ng-model="loginData.genero">
-              <ion-option value="Masculino">Hombre</ion-option>
-              <ion-option value="Femenino">Mujer</ion-option>
-          </ion-select>
-        </div>
+          <select ng-model="loginData.genero">
+              <option ng-selected="true">Masculino</option>
+              <option >Femenino</option>
+          </select>
+        </label>
 
         <label class="item item-input">
           <span class="input-label">Email</span>
           <input type="email" ng-model="loginData.email">
         </label>
+
         <label class="item item-input">
           <span class="input-label">Contraseña</span>
           <input type="password" ng-model="loginData.password">
         </label>
 
-        <label>
+        <label class="item item-input">
+          <span class="input-label">Confirmar Contraseña</span>
+          <input type="password" ng-model="loginData.password_confirm">
+        </label>
+
+        <label class="item item-input">
           <span class="input-label">Fecha de Nacimiento</span>
           <input type="date" ng-model="loginData.date">
         </label>
@@ -63,7 +69,7 @@
               <option>Estados Unidos</option>
               <option>Guatemala</option>
               <option>Honduras</option>
-              <option selected>México</option>
+              <option ng-selected="true">México</option>
               <option>Nicaragua</option>
               <option>Panamá</option>
               <option>Paraguay</option>
@@ -78,7 +84,8 @@
               Estado
             </div>
             <select ng-model="loginData.estado">
-              <option selected>Aguascalientes</option>
+              <option ng-selected="true">-</option>
+              <option>Aguascalientes</option>
               <option>Baja California</option>
               <option>Baja California Sur</option>
               <option>Campeche</option>
@@ -122,8 +129,9 @@
             <div class="input-label">
               Estudios
             </div>
-            <select ng-model="estudios">
-              <option selected>Secundaria</option>
+            <select ng-model="loginData.estudios">
+              <option ng-selected="true">-</option>
+              <option>Secundaria</option>
               <option>Preparatoria</option>
               <option>Licenciatura</option>
               <option>Postgrado</option>

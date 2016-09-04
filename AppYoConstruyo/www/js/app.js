@@ -20,11 +20,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'satellizer'])
       StatusBar.styleDefault();
     }
 
-    // Check that user is logged in
-    if (window.localStorage && !window.localStorage.getItem('loggedIn')) {
-      console.log("Not logged In");
-    }
-
 
 
 
