@@ -8,6 +8,8 @@
 
   <ion-content class="gray-background">
     <form ng-submit="doRegistration()">
+
+
       <div class="list card">
 
         <label class="item item-input">
@@ -21,10 +23,10 @@
 
         <div class="item item-input item-select">
           <span class="input-label">Género</span>
-          <select ng-model="loginData.genero">
-              <option>Hombre</option>
-              <option>Mujer</option>
-          </select>
+          <ion-select ng-model="loginData.genero">
+              <ion-option value="Masculino">Hombre</ion-option>
+              <ion-option value="Femenino">Mujer</ion-option>
+          </ion-select>
         </div>
 
         <label class="item item-input">

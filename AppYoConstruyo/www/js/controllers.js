@@ -1,10 +1,23 @@
-angular.module('starter.controllers', []).controller('AppCtrl', function($scope, $http, $ionicModal, $timeout, $ionicHistory, $ionicPopup) {
+angular.module('starter.controllers', []).controller('AppCtrl', function($scope, $location, $http, $ionicModal, $timeout, $ionicHistory, $ionicPopup) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
+
+    $scope.checkRegistered = function(capitulo) {
+      console.log("checking...");
+      // Check that user is logged in
+      if (window.localStorage && !window.localStorage.getItem('registered')) {
+        console.log("Not registered");
+          //$scope.registration();
+          //$location.path("/introduccion");
+      } else {
+
+      }
+    };
+
     $scope.noBack = function() {
         console.log('go back', ':)');
         $ionicHistory.nextViewOptions({
@@ -18,27 +31,27 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     };
     
 
-$scope.goFinal = function() {
-  // An elaborate, custom popup
-  var myPopup = $ionicPopup.show({
-    title: '<h3><b>¡Muchas Felicidades!</b></h3>',
-    subTitle: '<div align="left">Has concluido todos los temas del curso de auto-construcción Yo Construyo. Agradecemos tu tiempo y la confianza depositada en el mismo. A continuación te pedimos tu apoyo para contestar la siguiente encuesta de salida, con el objetivo de mejorar la aplicación.</div><br> Te invitamos también a escribirnos tus dudas y comentarios a:<br>info@cdcs.com.mx <br>+52 (81) 8358-2000 ext.5262,Síguenos en Facebook y Twitter: /CentroCEMEXTEC',
-    scope: $scope,
-    buttons: [
-      {
-        text: '<b>Encuesta</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-            window.open('https://docs.google.com/forms/d/1zshZF0w5L6VjTMaAGq5O0AUk7OQvonvqVNUIDBWqpcY/viewform','_system','location=yes'); 
-        }
-      }
-    ]
-  });
+    $scope.goFinal = function() {
+      // An elaborate, custom popup
+      var myPopup = $ionicPopup.show({
+        title: '<h3><b>¡Muchas Felicidades!</b></h3>',
+        subTitle: '<div align="left">Has concluido todos los temas del curso de auto-construcción Yo Construyo. Agradecemos tu tiempo y la confianza depositada en el mismo. A continuación te pedimos tu apoyo para contestar la siguiente encuesta de salida, con el objetivo de mejorar la aplicación.</div><br> Te invitamos también a escribirnos tus dudas y comentarios a:<br>info@cdcs.com.mx <br>+52 (81) 8358-2000 ext.5262,Síguenos en Facebook y Twitter: /CentroCEMEXTEC',
+        scope: $scope,
+        buttons: [
+          {
+            text: '<b>Encuesta</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+                window.open('https://docs.google.com/forms/d/1zshZF0w5L6VjTMaAGq5O0AUk7OQvonvqVNUIDBWqpcY/viewform','_system','location=yes'); 
+            }
+          }
+        ]
+      });
 
-  myPopup.then(function(res) {
-    console.log('Tapped!', res);
-  });
- };
+      myPopup.then(function(res) {
+        console.log('Tapped!', res);
+      });
+    };
     
     //Login Data
    $scope.loginData = {};
@@ -80,21 +93,41 @@ $scope.goFinal = function() {
     $scope.doRegistration = function() {
         console.log('Doing registration');
         $scope.registrationResponse = "Registrando...";
-        var link = 'http://192.168.0.8:8000/register';
+        var link = 'http://192.168.0.8:8000/api/v1/register';
 
-        var userData = {
-          nombre: $scope.loginData.nombre,
-          apellido: $scope.loginData.apellido,
-          genero: $scope.loginData.genero,
-          email: $scope.loginData.email,
+
+
+        $http.post(link, {
+          name: $scope.loginData.nombre, 
+          lastname: $scope.loginData.apellido,
+          email: $scope.loginData.email, 
           password: $scope.loginData.password,
-          nacimiento: $scope.loginData.date,
-          pais: $scope.loginData.pais,
-          estado: $scope.loginData.estado,
-          ciudad: $scope.loginData.ciudad,
-          estudios: $scope.loginData.estudios
-        }
-
+          password_confirmation: $scope.loginData.password_confirm,
+          gender: $scope.loginData.genero,
+          dob: $scope.loginData.date,
+          country: $scope.loginData.pais,
+          state: $scope.loginData.estado,
+          city: $scope.loginData.ciudad,
+          education: $scope.loginData.estudios
+        })
+        .success(function(res) {
+          console.log(JSON.stringify(res));
+          if (res.registration != null) {
+            console.log(res.registration);
+            $scope.registrationResponse = "Usuario creado";
+          } else if (res.email != null) {
+            $scope.registrationResponse = "Email en uso o invalido";
+            console.log(res.email);
+          } else if (res.password != null) {
+            $scope.registrationResponse = "Las contraseñas deben de coincidir y ser de 6 o más caracteres";
+          } else {
+            $scope.registrationResponse = "Campos invalidos";
+          }
+        })
+        .error(function(e) {
+          $scope.registrationResponse = "Error... revisa tu conexión a internet";
+        });
+          /*
         console.log(JSON.stringify(userData));
 
         $http.post(link, userData)
@@ -111,6 +144,7 @@ $scope.goFinal = function() {
 
             $scope.registrationResponse = "Error al registrarse.";
         });
+        */
     };
 
     $scope.doLogout = function(){

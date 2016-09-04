@@ -3,7 +3,7 @@
         <ion-list>
             <div ng-repeat="capitulo in capitulos" class="list card hoverable">
                 <div class="item-image">
-                    <a href="#/app/capitulos/{{capitulo.link}}">
+                    <a ng-click="checkRegistered('{{capitulo.link}}')">
                         <img src="img/cards/{{capitulo.image}}"/>
                     </a>
                 </div>
