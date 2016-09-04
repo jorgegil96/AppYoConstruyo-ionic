@@ -48,9 +48,9 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
       if (window.localStorage.getItem('registered') != true) {
         console.log("Not registered");
         // Force the user to register before using the app.
-        $scope.registration();
         $scope.modalRegistration.backdropClickToClose = false;
         $scope.modalRegistration.hardwareBackButtonClose = false;
+        $scope.registration();
       } else {
         console.log("Registered");
         var token = localStorage.getItem("token");
@@ -127,9 +127,9 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           $scope.modalRegistration.backdropClickToClose = true;
           $scope.modalRegistration.hardwareBackButtonClose = true;
 
-          $scope.login();
           $scope.modalLogin.backdropClickToClose = false;
           $scope.modalLogin.hardwareBackButtonClose = false;
+          $scope.login();
         } else if (res.email != null) {
           $scope.registrationResponse = "Email en uso o invalido";
           console.log(res.email);
