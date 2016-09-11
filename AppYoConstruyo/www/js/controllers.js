@@ -60,7 +60,6 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         var token = localStorage.getItem("token");
         if (token != null) {
           $scope.refreshToken();
-          $scope.uploadProgress();
         }
       }
     };
@@ -89,6 +88,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           localStorage.setItem("token", res.token);
 
           $scope.closeElegir();
+          $scope.closeLogin();
         } else {
           console.log(res.token);
           $scope.loginResponse = "No se pudo iniciar sesión";
@@ -195,6 +195,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           if (res.token != null) {
             console.log("Got new token: " + JSON.stringify(res));
             localStorage.setItem("token", res.token);
+            $scope.uploadProgress();
           } else {
             console.log("Could not get new token");
             $scope.login();
@@ -222,6 +223,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           }
         }
 
+        console.log("records: " + JSON.stringify(toUpload));
         var postData = {
           records: JSON.stringify(toUpload)
         };
@@ -229,7 +231,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         if (count > 0 ) {
           $http.post(link + token, postData)
           .success(function(res) {
-            console.log(JSON.stringify(res));
+            console.log("Progress uploaded");
           })
           .error(function(e) {
             console.log("Error updating progress");
@@ -239,6 +241,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     };
 
     $scope.saveProgress = function (id) {
+      console.log("Saving progress...");
       var progress = localStorage.getItem("progress");
       if (progress == null) {
         console.log("progress null");
