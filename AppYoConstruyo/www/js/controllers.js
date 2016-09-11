@@ -6,6 +6,9 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     //$scope.$on('$ionicView.enter', function(e) {
     //});
 
+    var domain = "http://yoconstruyo.dev:26";
+    $scope.loginData = {};
+
     $scope.noBack = function() {
         console.log('go back', ':)');
         $ionicHistory.nextViewOptions({
@@ -44,18 +47,20 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
     $scope.checkRegistered = function(capitulo) {
       console.log("checking...");
+      console.log(localStorage.getItem("token"));
       // Check that user is logged in
-      if (window.localStorage.getItem('registered') != true) {
+      if (localStorage.getItem('token') == null) {
         console.log("Not registered");
         // Force the user to register before using the app.
-        $scope.modalRegistration.backdropClickToClose = false;
-        $scope.modalRegistration.hardwareBackButtonClose = false;
-        $scope.registration();
+        $scope.modalElegir.backdropClickToClose = false;
+        $scope.modalElegir.hardwareBackButtonClose = false;
+        $scope.elegir();
       } else {
         console.log("Registered");
         var token = localStorage.getItem("token");
         if (token != null) {
           $scope.refreshToken();
+          $scope.uploadProgress();
         }
       }
     };
@@ -64,7 +69,8 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.doLogin = function() {
       console.log("Logging in...");
       $scope.loginResponse = "Iniciando sesión...";
-      var link = 'http://192.168.0.8:8000/api/v1/authenticate';
+      var link = domain + '/api/v1/authenticate';
+
 
       var credentials = {
         email: $scope.loginData.email,
@@ -72,6 +78,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
       };
 
       console.log(JSON.stringify(credentials));
+      console.log(link);
 
       $http.post(link, credentials)
       .success(function(res) {
@@ -80,9 +87,8 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           console.log(res.token);
           $scope.loginResponse = "Sesión Iniciada";
           localStorage.setItem("token", res.token);
-          $scope.closeLogin();
-          $scope.modalLogin.backdropClickToClose = true;
-          $scope.modalLogin.hardwareBackButtonClose = true;
+
+          $scope.closeElegir();
         } else {
           console.log(res.token);
           $scope.loginResponse = "No se pudo iniciar sesión";
@@ -98,10 +104,11 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.doRegistration = function() {
       console.log('Doing registration');
       $scope.registrationResponse = "Registrando...";
-      var link = 'http://192.168.0.8:8000/api/v1/register';
+      var link = domain + '/api/v1/register';
+      var loginUrl = domain + '/api/v1/authenticate';
 
       var userData = {
-        name: $scope.loginData.nombre, 
+        name: $scope.loginData.nombre,
         last_name: $scope.loginData.apellido,
         email: $scope.loginData.email, 
         password: $scope.loginData.password,
@@ -114,7 +121,13 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         education: $scope.loginData.estudios
       };
 
+      var credentials = {
+        email: $scope.loginData.email, 
+        password: $scope.loginData.password
+      };
+
       console.log(JSON.stringify(userData));
+      console.log(link);
 
       $http.post(link, userData)
       .success(function(res) {
@@ -123,13 +136,28 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
           console.log(res.registration);
           $scope.registrationResponse = "Usuario creado";
           localStorage.setItem("registered", true);
-          $scope.closeRegistration();
-          $scope.modalRegistration.backdropClickToClose = true;
-          $scope.modalRegistration.hardwareBackButtonClose = true;
 
-          $scope.modalLogin.backdropClickToClose = false;
-          $scope.modalLogin.hardwareBackButtonClose = false;
-          $scope.login();
+          console.log("loginurl: " + loginUrl);
+          console.log("credentials: " + JSON.stringify(credentials));
+          $http.post(loginUrl, credentials)
+          .success(function(loginres) {
+            console.log(JSON.stringify(loginres));
+            if (loginres.token != null) {
+              console.log(loginres.token);
+              $scope.registrationResponse = "Sesión Iniciada";
+              localStorage.setItem("token", loginres.token);
+              $scope.closeElegir();
+              $scope.closeRegistration();
+            } else {
+              console.log(loginres.token);
+              $scope.registrationResponse = "No se pudo iniciar sesión";
+            }
+          })
+          .error(function(ee) {
+            $scope.registrationResponse = "Revisa tu conexión a internet";
+          });          
+
+
         } else if (res.email != null) {
           $scope.registrationResponse = "Email en uso o invalido";
           console.log(res.email);
@@ -140,11 +168,13 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
         }
       })
       .error(function(e) {
-        $scope.registrationResponse = "Revisa tu conexión a internet";
+        console.log(JSON.stringify(e));
+        $scope.registrationResponse = "Llena todos los campos correctamente";
       });
     };
 
     $scope.prepLogin = function(type) {
+      console.log("prep:" + type);
       // TYPE
       // 0 => login
       // 1 => registration 
@@ -157,7 +187,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
     $scope.refreshToken = function() {
       console.log("Refreshing token...");
-      var link = "http://192.168.0.8:8000/api/v1/refresh?token=";
+      var link = domain + "/api/v1/refresh?token=";
       var token = localStorage.getItem("token");
       if (token != null) {
         $http.post(link + token)
@@ -178,10 +208,33 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
     $scope.uploadProgress = function() {
       console.log("Uploading progress...");
-      var link = "http://192.168.0.8:8000/api/v1/";
+      var link = domain + "/api/v1/complete?token=";
       var progress = localStorage.getItem("progress");
+      var token = localStorage.getItem("token");
       if (progress != null) {
+        var toUpload = [];
+        var count = 0;
+        progress = JSON.parse(progress);
+        for (var i = 0; i < progress.length; i++) {
+          if (progress[i] == true) {
+            toUpload[count] = i;
+            count++;
+          }
+        }
 
+        var postData = {
+          records: JSON.stringify(toUpload)
+        };
+
+        if (count > 0 ) {
+          $http.post(link + token, postData)
+          .success(function(res) {
+            console.log(JSON.stringify(res));
+          })
+          .error(function(e) {
+            console.log("Error updating progress");
+          });
+        }
       }
     };
 
@@ -199,6 +252,8 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
 
       console.log("new: " + JSON.stringify(progress));
       localStorage.setItem("progress", JSON.stringify(progress));
+
+      $scope.uploadProgress();
     };
 
     $scope.getColor = function(id) {
@@ -212,6 +267,19 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     };
 
     
+  //ELEGIR LOGIN O REGISTRO
+  $ionicModal.fromTemplateUrl('templates/elegirLogin.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modalElegir = modal;
+  });
+  $scope.closeElegir = function() {
+    $scope.modalElegir.hide();
+  };
+  $scope.elegir = function() {
+    $scope.modalElegir.show();
+  };
+
   //LOGIN
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
@@ -222,6 +290,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalLogin.hide();
   };
   $scope.login = function() {
+    console.log("login()");
     $scope.modalLogin.show();
   };
 
@@ -248,6 +317,7 @@ angular.module('starter.controllers', []).controller('AppCtrl', function($scope,
     $scope.modalRegistration.hide();
   };
   $scope.registration = function() {
+    console.log("registration()");
     $scope.modalRegistration.show();
   };
 
